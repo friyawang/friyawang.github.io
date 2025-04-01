@@ -38,12 +38,31 @@
             margin-top: 20px;
             color: #666;
         }
+        .name-title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .chinese-name {
+            font-size: 1.5em;
+            color: #666;
+        }
+        .supervisor-info {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Jing Wang</h1>
+        <div class="name-title">
+            <h1>Jing Wang</h1>
+            <span class="chinese-name">（王静）</span>
+        </div>
         <p>PhD Candidate at Fudan University</p>
+        <p class="supervisor-info">Supervised by Prof. <a href="https://sme.fudan.edu.cn/60/76/c31158a352374/page.htm">Xiaoyang Zeng</a></p>
         <div class="contact-info">
             <p>Office: 320, Building of Microeletronics, Fudan University</p>
             <p>Contact: jingwfriya [at] foxmail.com</p>
