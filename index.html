@@ -8,17 +8,49 @@
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             color: #333;
+            background-color: #f9f9f9;
         }
         .header {
             text-align: center;
             margin-bottom: 40px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .avatar {
+            width: 200px;
+            height: auto;
+            border-radius: 0;
+            object-fit: contain;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .logos-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .institution-logo {
+            height: 60px;
+            object-fit: contain;
         }
         h1 {
             color: #2c3e50;
+            margin: 0;
         }
         h2 {
             color: #34495e;
@@ -26,12 +58,20 @@
             padding-bottom: 10px;
             margin-top: 30px;
         }
+        .main-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
         .publications {
             margin-top: 20px;
         }
         .publication-item {
             margin-bottom: 20px;
-            padding-left: 20px;
+            padding: 15px;
+            border-left: 3px solid #3498db;
+            background-color: #f8f9fa;
         }
         .contact-info {
             text-align: center;
@@ -49,108 +89,230 @@
             font-size: 1.5em;
             color: #666;
         }
-        .supervisor-info {
-            margin-top: 10px;
-            font-style: italic;
+        .current-position {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        .language-toggle {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: transparent;
             color: #666;
+            border: 1px solid #666;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .language-toggle:hover {
+            background-color: #f5f5f5;
+            color: #333;
+            border-color: #333;
+        }
+        .about-section[lang="zh"] {
+            display: none;
+        }
+        .about-section {
+            margin-bottom: 20px;
+        }
+        .about-section h3 {
+            color: #2c3e50;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .about-section ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        .collaboration-box {
+            margin: 20px 0;
+            padding: 15px 20px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        .collaboration-box p {
+            margin: 5px 0;
+            color: #2c3e50;
+        }
+        .collaboration-box strong {
+            color: #2980b9;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .section-header h2 {
+            margin: 0;
+            border-bottom: none;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <div class="name-title">
-            <h1>Jing Wang</h1>
-            <span class="chinese-name">（王静）</span>
+        <div class="profile-section">
+            <img src="images/wj-avatar.jpg" alt="Jing Wang" class="avatar">
+            <div>
+                <div class="name-title">
+                    <h1>Jing Wang</h1>
+                    <span class="chinese-name">（王静）</span>
+                </div>
+                <p class="current-position">Lecturer <br> <a href="https://www.njupt.edu.cn/en/index.html">Nanjing University of Posts and Telecommunications (NJUPT)</a></p>
+                <div class="contact-info">
+                    <p>Office: School of Electronic Science and Engineering, NJUPT</p>
+                    <p>Email: jingwfriya [at] foxmail.com</p>
+                </div>
+            </div>
         </div>
-        <p>PhD Candidate at Fudan University</p>
-        <div class="contact-info">
-            <p>Office: 320, Building of Microeletronics, Fudan University</p>
-            <p>Contact: jingwfriya [at] foxmail.com</p>
+        
+        <div class="logos-section">
+            <img src="images/xdu.png" alt="Xidian University" class="institution-logo" title="Bachelor's Degree: Xidian University">
+            <img src="images/fdu.png" alt="Fudan University" class="institution-logo" title="PhD: Fudan University">
+            <img src="images/njupt.png" alt="NJUPT" class="institution-logo" title="Current: NJUPT">
         </div>
     </div>
 
-    <h2>About Me</h2>
-    <p>
-        Currently, I am pursuing my Ph.D. at Fudan University under the supervision of Prof. <a href="https://sme.fudan.edu.cn/60/76/c31158a352374/page.htm">Xiaoyang Zeng</a>, expected to graduate in Fall 2025. 
-        I received my bachelor's degree from Xidian University.
-    </p>
-    <p>
-        <span style="color: red">I am currently on the job market. Please feel free to contact me if you are interested.</span>
-    </p>
+    <div class="main-content">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <button class="language-toggle" onclick="toggleLanguage()">[中文版]</button>
+        </div>
+        
+        <div class="about-section" lang="en">
+            <p>
+                I am currently a Lecturer at Nanjing University of Posts and Telecommunications (NJUPT). 
+                I received my Ph.D. from Fudan University under the supervision of Prof. <a href="https://sme.fudan.edu.cn/60/76/c31158a352374/page.htm">Xiaoyang Zeng</a>, 
+                and my bachelor's degree from Xidian University.
+            </p>
 
-    <!-- <h2>News</h2>
-    <ul>
-        <li>2025-03: I will join NJUPT as a lecturer after graduation</li>
-        <li>2025-01: One Paper got accepted by IEEE Journal of Solid-State Circuits (JSSC)</li>
-    </ul> -->
+            <div class="collaboration-box">
+                <p><strong>Open Positions:</strong> We are looking forward to motivated students to join our research group regarding IC design and LLM for EDA.</p>
+            </div>
 
-    <h2>Education</h2>
-    <ul>
-        <li>2020 - Now, Ph.D. Candidate, Fudan University (Expected graduation: Fall 2025)</li>
-        <li>2016 - 2020, Bachelor, School of Microelectronics, Xidian University</li>
-    </ul>
+            <h3>Research Areas</h3>
+            <p>On-chip Integrated Energy Harvesting and Power Management ICs</p>
 
+            <h3>Education and Experience</h3>
+            <ul>
+                <li>June 2025 - Present: Lecturer, School of Integrated Circuit Science and Engineering, Nanjing University of Posts and Telecommunications</li>
+                <li>September 2020 - June 2025: Ph.D. in IC and System Design, Fudan University (Supervisor: Prof. Xiaoyang Zeng)</li>
+                <li>September 2016 - June 2020: B.E. in Microelectronic Science and Engineering, Xidian University</li>
+            </ul>
 
-    <h2>Research Interests</h2>
-    <p>
-        My research focuses on energy harvesting systems, particularly:
+        </div>
+
+        <div class="about-section" lang="zh">
+            <p>
+                我目前是南京邮电大学的讲师。我在复旦大学曾师从<a href="https://sme.fudan.edu.cn/60/76/c31158a352374/page.htm">曾晓洋</a>教授获得博士学位，
+                本科毕业于西安电子科技大学。
+            </p>
+
+            <div class="collaboration-box">
+                <p><strong>招生信息：</strong>诚邀有志于集成电路设计和EDA大语言模型应用的同学加入我们的研究团队。</p>
+            </div>
+
+            <h3>研究领域</h3>
+            <p>片上集成的能量收集与电源管理芯片</p>
+
+            <h3>研究成果</h3>
+            <p>
+                围绕低功耗集成电路设计与系统实现的关键技术需求，长期从事模拟/混合信号集成电路设计。作为核心成员参与多项国家级和省部级科研项目，包括国家重点研发计划、国家重点实验室自主课题面上项目及国家自然科学基金青年项目等。在IEEE Journal of Solid-State Circuits (JSSC)、IEEE Transactions on Power Electronics等集成电路领域顶级期刊和会议上发表多篇论文，研究成果得到国内外同行的广泛认可。
+            </p>
+        </div>
+
+        <h2>News</h2>
         <ul>
-            <li>Piezoelectric Energy Harvesting Interface Circuits</li>
-            <li>Power Management Integrated Circuits</li>
-            <li>Energy-Efficient Circuit Design</li>
+            <li>2025-03: Joined NJUPT as a Lecturer</li>
+            <li>2025-01: One Paper got accepted by IEEE Journal of Solid-State Circuits (JSSC)</li>
+            <li>2024-12: Successfully defended my Ph.D. thesis at Fudan University</li>
         </ul>
-    </p>
-    <p>
-        Recently, I am also exploring:
+
+        <h2>Education</h2>
         <ul>
-            <li>Large Language Models (LLMs) for Electronic Design Automation (EDA)</li>
+            <li>2020.09 - 2025.06, Ph.D., Fudan University</li>
+            <li>2016.09 - 2020.06, Bachelor, School of Microelectronics, Xidian University</li>
         </ul>
-    </p>
-    <p style="color: #666; font-style: italic;">
-        I welcome any potential collaboration opportunities in these research areas!
-    </p>
 
-    <h2>Publications</h2>
-    <div class="publications">
-        <div class="publication-item">
-            <p><strong>Enhancing Efficiency in Piezoelectric Energy Harvesting: Collaborative-flip Synchronized Switch Harvesting on Capacitors Rectifier and Multi-Output DC-DC Converters Utilizing Shared Capacitors</strong></p>
-            <p><strong>J. Wang</strong>, Y. Yang, Z. Li, S. Du, X. Yue, X. Liu, J. Han, X. Zeng, Z. Chen</p>
-            <p><em>IEEE Journal of Solid-State Circuits (SCI-I)</em></p>
-        </div>
+        <h2>Research Interests</h2>
+        <p>
+            My research focuses on energy harvesting systems, particularly:
+            <ul>
+                <li>Piezoelectric Energy Harvesting Interface Circuits</li>
+                <li>Power Management Integrated Circuits</li>
+                <li>Energy-Efficient Circuit Design</li>
+            </ul>
+        </p>
+        <p>
+            Recently, I am also exploring:
+            <ul>
+                <li>Large Language Models (LLMs) for Electronic Design Automation (EDA)</li>
+            </ul>
+        </p>
 
-        <div class="publication-item">
-            <p><strong>Piezoelectric Energy Harvesters: An Overview on Design Strategies and Topologies</strong></p>
-            <p><strong>J. Wang</strong>, Z. Chen, Z. Li, J. Jiang, J. Liang, X. Zeng</p>
-            <p><em>IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 69, no. 7, pp. 3057-3063, July 2022 (SCI-II)</em></p>
-        </div>
+        <h2>Publications</h2>
+        <div class="publications">
+            <div class="publication-item">
+                <p><strong>Enhancing Efficiency in Piezoelectric Energy Harvesting: Collaborative-flip Synchronized Switch Harvesting on Capacitors Rectifier and Multi-Output DC-DC Converters Utilizing Shared Capacitors</strong></p>
+                <p><strong>J. Wang</strong>, Y. Yang, Z. Li, S. Du, X. Yue, X. Liu, J. Han, X. Zeng, Z. Chen</p>
+                <p><em>IEEE Journal of Solid-State Circuits (SCI-I)</em></p>
+            </div>
 
-        <div class="publication-item">
-            <p><strong>A Cross Regulation Reduced Multi-Output and Multi-VCR Piezoelectric Energy Harvesting System Using Shared Capacitors</strong></p>
-            <p><strong>J. Wang</strong>, Z. Chen, J. Liang, X. Cheng, J. Han, X. Zeng</p>
-            <p><em>2022 IEEE International Symposium on Circuits and Systems (ISCAS), Austin, TX, USA, 2022, pp. 2768-2772</em></p>
-        </div>
+            <div class="publication-item">
+                <p><strong>Piezoelectric Energy Harvesters: An Overview on Design Strategies and Topologies</strong></p>
+                <p><strong>J. Wang</strong>, Z. Chen, Z. Li, J. Jiang, J. Liang, X. Zeng</p>
+                <p><em>IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 69, no. 7, pp. 3057-3063, July 2022 (SCI-II)</em></p>
+            </div>
 
-        <div class="publication-item">
-            <p><strong>Piezoelectric Energy Harvesting Interface Using Self-Bias-Flip Rectifier and Switched-PEH DC-DC for MPPT</strong></p>
-            <p>Z. Li, <strong>J. Wang</strong>, M.-K. Law, S. Du, J. Liang, X. Cheng, J. Han, X. Zeng, Z. Chen</p>
-            <p><em>IEEE Journal of Solid-State Circuits, vol. 59, no. 7, pp. 2248-2259, July 2024 (SCI-I)</em></p>
-        </div>
+            <div class="publication-item">
+                <p><strong>A Cross Regulation Reduced Multi-Output and Multi-VCR Piezoelectric Energy Harvesting System Using Shared Capacitors</strong></p>
+                <p><strong>J. Wang</strong>, Z. Chen, J. Liang, X. Cheng, J. Han, X. Zeng</p>
+                <p><em>2022 IEEE International Symposium on Circuits and Systems (ISCAS), Austin, TX, USA, 2022, pp. 2768-2772</em></p>
+            </div>
 
-        <div class="publication-item">
-            <p><strong>A Self-Bias-Flip With Charge Recycle Interface Circuit With No External Energy Reservoir for Piezoelectric Energy Harvesting Array</strong></p>
-            <p>Z. Li, Z. Chen, <strong>J. Wang</strong>, J. Wang, J. Jiang, S. Du, X. Cheng, X. Zeng, J. Han</p>
-            <p><em>IEEE Transactions on Power Electronics, vol. 38, no. 9, pp. 11630-11641, Sept. 2023 (SCI-I)</em></p>
-        </div>
+            <div class="publication-item">
+                <p><strong>Piezoelectric Energy Harvesting Interface Using Self-Bias-Flip Rectifier and Switched-PEH DC-DC for MPPT</strong></p>
+                <p>Z. Li, <strong>J. Wang</strong>, M.-K. Law, S. Du, J. Liang, X. Cheng, J. Han, X. Zeng, Z. Chen</p>
+                <p><em>IEEE Journal of Solid-State Circuits, vol. 59, no. 7, pp. 2248-2259, July 2024 (SCI-I)</em></p>
+            </div>
 
-        <div class="publication-item">
-            <p><strong>An Ultra-Efficient and Compact Flipping-Input Synchronized Switch Harvesting on Inductor and Capacitors Interface Circuit for Piezoelectric Energy Harvesting</strong></p>
-            <p>Q. Zuo, X. Hao, <strong>J. Wang</strong>, Y. Ma, J. Liu, Q. Kuai, Z. Guo, J. Jiang, Z. Chen</p>
-            <p><em>IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 71, no. 8, pp. 4000-4004, Aug. 2024 (SCI-II)</em></p>
+            <div class="publication-item">
+                <p><strong>A Self-Bias-Flip With Charge Recycle Interface Circuit With No External Energy Reservoir for Piezoelectric Energy Harvesting Array</strong></p>
+                <p>Z. Li, Z. Chen, <strong>J. Wang</strong>, J. Wang, J. Jiang, S. Du, X. Cheng, X. Zeng, J. Han</p>
+                <p><em>IEEE Transactions on Power Electronics, vol. 38, no. 9, pp. 11630-11641, Sept. 2023 (SCI-I)</em></p>
+            </div>
+
+            <div class="publication-item">
+                <p><strong>An Ultra-Efficient and Compact Flipping-Input Synchronized Switch Harvesting on Inductor and Capacitors Interface Circuit for Piezoelectric Energy Harvesting</strong></p>
+                <p>Q. Zuo, X. Hao, <strong>J. Wang</strong>, Y. Ma, J. Liu, Q. Kuai, Z. Guo, J. Jiang, Z. Chen</p>
+                <p><em>IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 71, no. 8, pp. 4000-4004, Aug. 2024 (SCI-II)</em></p>
+            </div>
         </div>
     </div>
 
     <footer style="text-align: center; margin-top: 50px; color: #666;">
-        <p>Last updated: [2025-03]</p>
+        <p>Last updated: March 2025</p>
     </footer>
+
+    <script>
+        function toggleLanguage() {
+            const enSection = document.querySelector('.about-section[lang="en"]');
+            const zhSection = document.querySelector('.about-section[lang="zh"]');
+            const button = document.querySelector('.language-toggle');
+            
+            if (enSection.style.display === 'none') {
+                enSection.style.display = 'block';
+                zhSection.style.display = 'none';
+                button.textContent = '[中文版]';
+            } else {
+                enSection.style.display = 'none';
+                zhSection.style.display = 'block';
+                button.textContent = '[English]';
+            }
+        }
+    </script>
 </body>
 </html> 
