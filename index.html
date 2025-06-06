@@ -83,7 +83,7 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
-            color: #000;
+            flex-wrap: wrap;
         }
         .chinese-name {
             font-size: 1.5em;
@@ -93,6 +93,17 @@
             font-size: 1.2em;
             color: #2c3e50;
             margin: 10px 0;
+            line-height: 1.4;
+        }
+        .current-position a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .current-position a:hover {
+            text-decoration: underline;
+        }
+        .contact-info p {
+            margin: 5px 0;
         }
         .language-toggle {
             display: inline-block;
@@ -149,6 +160,62 @@
         .section-header h2 {
             margin: 0;
             border-bottom: none;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .header {
+                padding: 20px 15px;
+            }
+            .profile-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .avatar {
+                width: 180px;
+            }
+            .name-title {
+                flex-direction: column;
+                gap: 5px;
+            }
+            .name-title h1 {
+                font-size: 1.8em;
+                margin: 0;
+            }
+            .chinese-name {
+                font-size: 1.3em;
+            }
+            .current-position {
+                font-size: 1.1em;
+                margin: 8px 0;
+            }
+            .contact-info {
+                margin-top: 15px;
+            }
+            .contact-info p {
+                font-size: 0.9em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header {
+                padding: 15px 10px;
+            }
+            .avatar {
+                width: 150px;
+            }
+            .name-title h1 {
+                font-size: 1.6em;
+            }
+            .chinese-name {
+                font-size: 1.2em;
+            }
+            .current-position {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
@@ -215,13 +282,14 @@
             </p>
 
             <div class="collaboration-box">
-                <p><strong>招生信息：</strong>诚邀有志于集成电路设计和 EDA 大语言模型应用的同学加入我们的研究团队。</p>
+                <p><strong>招生信息：</strong>诚邀有志于集成电路设计和 EDA 大语言模型应用的同学加入我们的研究团队。请发送简历至我的邮箱 jingwfriya [at] foxmail.com </p>
             </div>
 
         </div>
 
         <h2>News</h2>
         <ul>
+            <li>2025-06: One paper got accepted by IEEE Transactions on Power Electronics (TPE)</li>
             <li>2025-06: Joined NJUPT as a Lecturer</li>
             <li>2025-05: Successfully defended my Ph.D. thesis at Fudan University</li>
             <li>2025-01: One Paper got accepted by IEEE Journal of Solid-State Circuits (JSSC)</li>
