@@ -148,6 +148,25 @@
             width: 16px;
             text-align: center;
         }
+        .xhs-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            background: #ff2442;
+            color: #fff;
+            font-size: 9px;
+            font-weight: 700;
+            font-style: normal;
+            border-radius: 3px;
+            margin-right: 6px;
+            vertical-align: -2px;
+            font-family: 'Inter', sans-serif;
+        }
+        .xhs-stats {
+            color: #888;
+        }
         .name-title {
             display: flex;
             justify-content: center;
@@ -216,19 +235,27 @@
         .about-section li {
             margin-bottom: 4px;
         }
-        .collaboration-box {
-            margin: 22px 0;
-            padding: 16px 22px;
+        .recruitment-box {
+            margin: 28px 0 8px 0;
+            padding: 20px 24px;
             background-color: #f7f4f0;
             border-left: 4px solid #5b7fa5;
             border-radius: 0 6px 6px 0;
         }
-        .collaboration-box p {
-            margin: 5px 0;
+        .recruitment-box h3 {
+            font-family: 'Lora', Georgia, serif;
+            color: #3a3a3a;
+            margin: 0 0 10px 0;
+            font-size: 1.15em;
+            font-weight: 600;
+        }
+        .recruitment-box p {
+            margin: 6px 0;
             color: #3a3a3a;
         }
-        .collaboration-box strong {
-            color: #5b7fa5;
+        .recruitment-box .recruitment-en {
+            color: #5a5a5a;
+            margin-bottom: 12px;
         }
         .section-header {
             display: flex;
@@ -347,6 +374,7 @@
                     <p><i class="fa-solid fa-building-columns"></i> College of Integrated Circuit Science and Engineering, NJUPT</p>
                     <p><i class="fa-solid fa-envelope"></i> jingwfriya [at] foxmail.com</p>
                     <p><i class="ai ai-google-scholar"></i> <a href="https://scholar.google.com/citations?hl=en&user=YH18iEsAAAAJ" target="_blank">Google Scholar</a></p>
+                    <p><span class="xhs-icon">红</span> <a href="https://xhslink.cn/m/epbdCdfjSI" target="_blank">小红书 @香草巧克力o1o</a> <span class="xhs-stats">· 3919 次赞与收藏</span></p>
                 </div>
             </div>
         </div>
@@ -371,10 +399,6 @@
                 I received my Ph.D. from Fudan University under the supervision of Prof. <a href="https://sme.fudan.edu.cn/60/76/c31158a352374/page.htm">Xiaoyang Zeng</a>, 
                 and my bachelor's degree from Xidian University.
             </p>
-
-            <div class="collaboration-box">
-                <p><strong>Open Positions:</strong> We are looking forward to motivated students to join our research group regarding IC design and LLM for EDA.</p>
-            </div>
 
             <h3>Research Areas</h3>
             <li>On-chip Integrated Energy Harvesting and Power Management ICs</li>
@@ -404,11 +428,14 @@
                 （2）AI驱动的电源管理芯片智能设计自动化：基于大语言模型的电源电路智能理解与生成；面向多应用场景的电源芯片协同设计。
             </p>
 
-            <div class="collaboration-box">
-                <p><strong>招生信息：</strong></p>
-                <p>我们课题组专注于电源管理芯片和智能化设计方法的研究，如果你对模拟集成电路设计或AI与芯片的交叉领域感兴趣，欢迎加入我们！<br>无论是本科生想要尝试科研项目，还是研究生希望深入探索前沿技术，我们都会提供耐心的指导和充足的实践机会。课题组有完整的芯片设计到测试验证流程，能让大家在真实项目中得到锻炼和成长。<br>期待与有志于集成电路事业的同学们一起学习进步！</p>
-            </div>
+        </div>
 
+        <div class="recruitment-box">
+            <h3>招生信息 / Open Positions</h3>
+            <p class="recruitment-en">We are looking forward to motivated students to join our research group regarding IC design and LLM for EDA.</p>
+            <p>我们课题组专注于电源管理芯片和智能化设计方法的研究，如果你对模拟集成电路设计或AI与芯片的交叉领域感兴趣，欢迎加入我们！</p>
+            <p>无论是本科生想要尝试科研项目，还是研究生希望深入探索前沿技术，我们都会提供耐心的指导和充足的实践机会。课题组有完整的芯片设计到测试验证流程，能让大家在真实项目中得到锻炼和成长。</p>
+            <p>期待与有志于集成电路事业的同学们一起学习进步！</p>
         </div>
 
         <hr class="section-divider">
@@ -546,7 +573,7 @@
     </div>
 
     <footer style="text-align: center; margin-top: 50px; color: #666;">
-        <p>Last updated: May 2026</p>
+        <p>Last updated: August 2026</p>
     </footer>
 
     <script>
