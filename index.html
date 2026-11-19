@@ -33,10 +33,10 @@
     *,*::before,*::after { box-sizing:border-box; }
     html { scroll-behavior:smooth; scroll-padding-top:100px; }
     body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"Noto Sans",Arial,"PingFang SC","Microsoft YaHei",sans-serif; font-size:16px; line-height:1.75; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
-    button,select { font:inherit; }
+    button { font:inherit; }
     a { color:var(--accent); text-decoration:none; text-underline-offset:4px; }
     a:hover { text-decoration:underline; }
-    button,a,select,summary { -webkit-tap-highlight-color:transparent; }
+    button,a { -webkit-tap-highlight-color:transparent; }
     :focus-visible { outline:3px solid var(--accent); outline-offset:4px; border-radius:4px; }
     p { margin:0 0 16px; }
     strong { color:var(--ink); font-weight:600; }
@@ -49,12 +49,14 @@
     .wordmark { color:var(--ink); font-weight:650; font-size:17px; letter-spacing:-.3px; white-space:nowrap; }
     .wordmark span { margin-left:10px; color:var(--muted); font-size:14px; font-weight:400; letter-spacing:0; }
     .toolbar { display:flex; align-items:center; gap:10px; }
-    .control { display:flex; align-items:center; gap:7px; min-height:38px; padding:5px 11px; color:var(--text); background:var(--surface); border:1px solid var(--line); border-radius:8px; cursor:pointer; font-size:14px; }
+    .control { display:flex; align-items:center; gap:7px; min-height:44px; padding:5px 11px; color:var(--text); background:var(--surface); border:1px solid var(--line); border-radius:8px; cursor:pointer; font-size:14px; }
     .control:hover { background:var(--hover); }
     .control svg { width:17px; height:17px; stroke:currentColor; fill:none; stroke-width:1.6; flex:none; }
-    .theme-control { position:relative; padding-right:28px; }
-    .theme-control select { appearance:none; color:inherit; background:none; border:0; padding:0; cursor:pointer; max-width:112px; font-size:14px; }
-    .theme-control::after { content:""; position:absolute; right:12px; width:6px; height:6px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg) translateY(-2px); pointer-events:none; }
+    .theme-toggle { width:44px; height:44px; padding:0; justify-content:center; }
+    .theme-toggle svg { width:20px; height:20px; }
+    .theme-icon-sun { display:none; }
+    [data-theme="dark"] .theme-icon-sun { display:block; }
+    [data-theme="dark"] .theme-icon-moon { display:none; }
     .layout { max-width:1160px; margin:0 auto; padding:56px 32px 0; display:grid; grid-template-columns:238px minmax(0,1fr); gap:72px; align-items:start; }
     .profile { position:sticky; top:112px; }
     .portrait { display:block; width:156px; height:auto; max-width:100%; border-radius:12px; border:1px solid var(--line); margin:0 0 24px; box-shadow:var(--shadow); }
@@ -84,12 +86,6 @@
     .news-list { list-style:none; margin:0; padding:0; }
     .news-list li { display:grid; grid-template-columns:78px minmax(0,1fr); gap:16px; margin:0 0 16px; font-size:15px; line-height:1.75; }
     .news-list time { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; padding-top:1px; }
-    details.archive { margin-top:8px; }
-    details.archive summary { cursor:pointer; color:var(--accent); font-size:14px; width:fit-content; padding:5px 0; }
-    details.archive[open] summary { margin-bottom:14px; }
-    details .when-open { display:none; }
-    details[open] .when-open { display:inline; }
-    details[open] .when-closed { display:none; }
     .experience { display:grid; gap:22px; }
     .experience-item { display:grid; grid-template-columns:42px minmax(0,1fr); gap:16px; align-items:start; }
     .institution-logo { width:42px; height:42px; object-fit:contain; background:#fff; padding:4px; border-radius:8px; }
@@ -182,7 +178,7 @@
     <a class="wordmark" href="#about">Jing Wang<span>NJUPT</span></a>
     <div class="toolbar">
       <button class="control" id="language-toggle" type="button" aria-label="Switch to Chinese"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h12M9 3v2m3 0c0 6-4 9-8 11m1-8c1 4 4 6 7 7m2 6 5-12 5 12m-8-4h6"/></svg><span id="language-label">中文</span></button>
-      <label class="control theme-control"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><span class="sr-only"><span class="lang-en" lang="en">Color theme</span><span class="lang-zh" lang="zh-CN">颜色主题</span></span><select id="theme-select" aria-label="Color theme"><option value="system" data-en="System" data-zh="跟随系统">System</option><option value="light" data-en="Light" data-zh="日间模式">Light</option><option value="dark" data-en="Dark" data-zh="夜间模式">Dark</option></select></label>
+      <button class="control theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg></button>
     </div>
   </div></header>
   <div class="layout">
@@ -195,7 +191,7 @@
         <div class="contact-line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><span class="lang-en" lang="en">Room B518, Dianguang Building<br>Xianlin Campus</span><span class="lang-zh" lang="zh-CN">仙林校区<br>电光学科楼 B518</span></span></div>
         <div class="contact-line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 8 10-5 10 5-10 5Zm4 3v6c4 3 8 3 12 0v-6m4-3v9"/></svg><a href="https://scholar.google.com/citations?hl=en&amp;user=YH18iEsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></div>
       </address>
-      <nav class="section-nav" aria-label="Sections"><a href="#about"><span class="lang-en" lang="en">About</span><span class="lang-zh" lang="zh-CN">简介</span></a><a href="#news"><span class="lang-en" lang="en">News</span><span class="lang-zh" lang="zh-CN">动态</span></a><a href="#publications"><span class="lang-en" lang="en">Publications</span><span class="lang-zh" lang="zh-CN">论文</span></a><a href="#experience"><span class="lang-en" lang="en">Experience</span><span class="lang-zh" lang="zh-CN">经历</span></a><a href="#teaching"><span class="lang-en" lang="en">Teaching</span><span class="lang-zh" lang="zh-CN">教学</span></a><a href="#service"><span class="lang-en" lang="en">Service</span><span class="lang-zh" lang="zh-CN">学术服务</span></a></nav>
+      <nav class="section-nav" aria-label="Sections"><a href="#about"><span class="lang-en" lang="en">About</span><span class="lang-zh" lang="zh-CN">简介</span></a><a href="#news"><span class="lang-en" lang="en">News</span><span class="lang-zh" lang="zh-CN">动态</span></a><a href="#publications"><span class="lang-en" lang="en">Publications</span><span class="lang-zh" lang="zh-CN">论文</span></a></nav>
     </aside>
     <main id="main">
       <section id="about" aria-labelledby="about-title">
@@ -203,25 +199,25 @@
         <div class="intro lang-en" lang="en">
           <p>I am an <strong>Associate Professor (Tenure-track)</strong> at Nanjing University of Posts and Telecommunications (NJUPT), and a member of the Power Micro-Electronics Lab (PMEL) led by Prof. <a href="https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52B4F2DCFE050007F01006EFE" target="_blank" rel="noopener noreferrer">Yufeng Guo</a>. I received my Ph.D. from Fudan University, advised by Prof. <a href="https://sme.fudan.edu.cn/60/76/c31158a352374/page.htm" target="_blank" rel="noopener noreferrer">Xiaoyang Zeng</a>, and my bachelor's degree from Xidian University.</p>
           <p>My research combines <strong>power-management and analog IC design</strong> with <strong>AI-driven design automation</strong>. I develop energy-harvesting and power-management circuits, and explore how machine learning and large language models can support circuit retrieval, optimization, and design.</p>
-          <p>I have completed multiple silicon tape-outs and lead projects supported by the Jiangsu Provincial Natural Science Foundation (Young Scientists Fund), the EDA² Young Scientists Fund, and a national key laboratory open research program.</p>
+          <p>I have completed multiple silicon tape-outs.</p>
         </div>
         <div class="intro lang-zh" lang="zh-CN">
           <p>王静，南京邮电大学<strong>预聘副教授</strong>，功率微电子实验室（PMEL）成员（负责人：<a href="https://yjs.njupt.edu.cn/dsgl/nocontrol/college/dsfcxq.htm?dsJbxxId=9B9D05C52B4F2DCFE050007F01006EFE" target="_blank" rel="noopener noreferrer">郭宇锋</a>教授）。2020 年和 2025 年分别于西安电子科技大学、复旦大学获得学士和博士学位，博士导师为<a href="https://sme.fudan.edu.cn/60/76/c31158a352374/page.htm" target="_blank" rel="noopener noreferrer">曾晓洋</a>教授。</p>
           <p>研究聚焦<strong>电源管理与模拟芯片设计</strong>，以及<strong>人工智能驱动的芯片设计自动化</strong>。围绕能量采集与电源管理电路，探索机器学习和大语言模型在电路检索、优化及设计中的应用。</p>
-          <p>已完成多次成功流片验证，现主持江苏省自然科学基金青年基金、EDA² 青年基金及全国重点实验室开放子课题。</p>
+          <p>已完成多次成功流片验证。</p>
         </div>
         <p class="research-label"><span class="lang-en" lang="en">Research interests</span><span class="lang-zh" lang="zh-CN">研究方向</span></p>
-        <div class="research-tags"><span><span class="lang-en" lang="en">Power management</span><span class="lang-zh" lang="zh-CN">电源管理</span></span><span><span class="lang-en" lang="en">Analog IC design</span><span class="lang-zh" lang="zh-CN">模拟芯片设计</span></span><span><span class="lang-en" lang="en">AI for EDA</span><span class="lang-zh" lang="zh-CN">AI for EDA</span></span></div>
+        <div class="research-tags"><span><span class="lang-en" lang="en">Power management & analog IC design</span><span class="lang-zh" lang="zh-CN">电源管理与模拟集成电路设计</span></span><span><span class="lang-en" lang="en">AI for EDA</span><span class="lang-zh" lang="zh-CN">AI for EDA</span></span></div>
         <div class="opportunities"><h3><span class="lang-en" lang="en">Open positions</span><span class="lang-zh" lang="zh-CN">招生信息</span></h3><p><span class="lang-en" lang="en">I welcome motivated undergraduate and graduate students interested in analog IC design and AI for EDA. We offer tape-out opportunities and computing resources. <a href="mailto:wangjing25@njupt.edu.cn">Get in touch</a> with your background and research interests.</span><span class="lang-zh" lang="zh-CN">欢迎对模拟集成电路设计、AI 与芯片设计交叉研究感兴趣的本科生和研究生加入。课题组提供流片机会与计算资源，欢迎<a href="mailto:wangjing25@njupt.edu.cn">邮件联系</a>，介绍你的学习背景和研究兴趣。</span></p></div>
       </section>
-      <section id="news" aria-labelledby="news-title"><h2 class="section-title" id="news-title"><span class="lang-en" lang="en">News</span><span class="lang-zh" lang="zh-CN">近期动态</span></h2><ul class="news-list"><li><time datetime="2026-10">2026.10</time><div><span class="lang-en" lang="en">🎉 Congratulations to Yiyu Chen, Jingyu Gu, and Yi Kang on winning the <strong>Second Prize</strong> in the ICSICT 2026 Analog Design Competition!</span><span class="lang-zh" lang="zh-CN">🎉 祝贺 Yiyu Chen、Jingyu Gu、Yi Kang 三位同学获得 <strong>ICSICT 2026 模拟电路设计竞赛二等奖</strong>！</span></div></li><li><time datetime="2026-10">2026.10</time><div><span class="lang-en" lang="en">🎉 Congratulations to Yuchen Wang and Wenbin Shen on winning the <strong>Second Prize</strong> in the 3rd Integrated Chip and Chiplet Technology Open-Source Community Competition!</span><span class="lang-zh" lang="zh-CN">🎉 祝贺王语辰、申文彬获得<strong>第三届集成芯片和芯粒技术开源社区大赛二等奖</strong>！</span></div></li><li><time datetime="2026-09">2026.09</time><div><span class="lang-en" lang="en">Our collaborative work, <a href="https://analog-design-bench.tokenzhang.com/" target="_blank" rel="noopener noreferrer">Analog Design Bench</a>, is now available: a benchmark for agents on long-horizon analog and mixed-signal circuit design.</span><span class="lang-zh" lang="zh-CN">参与的 <a href="https://analog-design-bench.tokenzhang.com/" target="_blank" rel="noopener noreferrer">Analog Design Bench</a> 已公开发布，评测智能体的长时程模拟与混合信号电路设计能力。</span></div></li><li><time datetime="2026-08">2026.08</time><div><span class="lang-en" lang="en">🎉 Congratulations to our students on winning the <strong>National Third Prize</strong> in the 10th National College Student Integrated Circuit Innovation and Entrepreneurship Competition!</span><span class="lang-zh" lang="zh-CN">🎉 祝贺同学们获得<strong>第十届全国大学生集成电路创新创业大赛全国总决赛三等奖</strong>！</span></div></li><li><time datetime="2026-07">2026.07</time><div><span class="lang-en" lang="en"><a href="#analogretriever">AnalogRetriever</a> has been accepted to <strong>ICCAD 2026</strong>.</span><span class="lang-zh" lang="zh-CN"><a href="#analogretriever">AnalogRetriever</a> 被 <strong>ICCAD 2026</strong> 录用。</span></div></li><li><time datetime="2026-05">2026.05</time><div><span class="lang-en" lang="en"><a href="#lithogrpo">LithoGRPO</a> has been accepted to <strong>ICML 2026</strong>.</span><span class="lang-zh" lang="zh-CN"><a href="#lithogrpo">LithoGRPO</a> 被 <strong>ICML 2026</strong> 录用。</span></div></li></ul><details class="archive"><summary><span class="when-closed"><span class="lang-en" lang="en">Earlier news</span><span class="lang-zh" lang="zh-CN">更多动态</span></span><span class="when-open"><span class="lang-en" lang="en">Hide earlier news</span><span class="lang-zh" lang="zh-CN">收起历史动态</span></span></summary><ul class="news-list"><li><time datetime="2026-03">2026.03</time><div><span class="lang-en" lang="en">Our paper on multi-input collaborative-flip energy harvesting has been accepted to <strong>IEEE TVLSI</strong>.</span><span class="lang-zh" lang="zh-CN">多输入协同翻转能量采集设计方法论文被 <strong>IEEE TVLSI</strong> 录用。</span></div></li><li><time datetime="2026-01">2026.01</time><div><span class="lang-en" lang="en">Our survey on LLMs for EDA has been accepted to <strong>Acta Electronica Sinica</strong>.</span><span class="lang-zh" lang="zh-CN">大语言模型在电子设计自动化中的应用综述被<strong>《电子学报》</strong>录用。</span></div></li><li><time datetime="2026-01">2026.01</time><div><span class="lang-en" lang="en">Our paper on a dual-path SSHC rectifier has been accepted to <strong>ISCAS 2026</strong>.</span><span class="lang-zh" lang="zh-CN">双路径 SSHC 整流器论文被 <strong>ISCAS 2026</strong> 录用。</span></div></li></ul></details></section>
+      <section id="news" aria-labelledby="news-title"><h2 class="section-title" id="news-title"><span class="lang-en" lang="en">News</span><span class="lang-zh" lang="zh-CN">近期动态</span></h2><ul class="news-list"><li><time datetime="2026-10">2026.10</time><div><span class="lang-en" lang="en">🎉 Congratulations to Yiyu Chen, Jingyu Gu, and Yi Kang on winning the <strong>Second Prize</strong> in the ICSICT 2026 Analog Design Competition!</span><span class="lang-zh" lang="zh-CN">🎉 祝贺 Yiyu Chen、Jingyu Gu、Yi Kang 三位同学获得 <strong>ICSICT 2026 模拟电路设计竞赛二等奖</strong>！</span></div></li><li><time datetime="2026-10">2026.10</time><div><span class="lang-en" lang="en">🎉 Congratulations to Yuchen Wang and Wenbin Shen on winning the <strong>Second Prize</strong> in the 3rd Integrated Chip and Chiplet Technology Open-Source Community Competition!</span><span class="lang-zh" lang="zh-CN">🎉 祝贺王语辰、申文彬获得<strong>第三届集成芯片和芯粒技术开源社区大赛二等奖</strong>！</span></div></li><li><time datetime="2026-09">2026.09</time><div><span class="lang-en" lang="en">Our collaborative work, <a href="https://analog-design-bench.tokenzhang.com/" target="_blank" rel="noopener noreferrer">Analog Design Bench</a>, is now available: a benchmark for agents on long-horizon analog and mixed-signal circuit design.</span><span class="lang-zh" lang="zh-CN">参与的 <a href="https://analog-design-bench.tokenzhang.com/" target="_blank" rel="noopener noreferrer">Analog Design Bench</a> 已公开发布，评测智能体的长时程模拟与混合信号电路设计能力。</span></div></li><li><time datetime="2026-08">2026.08</time><div><span class="lang-en" lang="en">🎉 Congratulations to Yaxin Yu, Lan Jiang, and Wenbin Shen on winning the <strong>National Third Prize</strong> in the 10th National College Student Integrated Circuit Innovation and Entrepreneurship Competition!</span><span class="lang-zh" lang="zh-CN">🎉 祝贺俞雅馨、姜岚、申文彬获得<strong>第十届全国大学生集成电路创新创业大赛全国总决赛三等奖</strong>！</span></div></li><li><time datetime="2026-07">2026.07</time><div><span class="lang-en" lang="en"><a href="#analogretriever">AnalogRetriever</a> has been accepted to <strong>ICCAD 2026</strong>.</span><span class="lang-zh" lang="zh-CN"><a href="#analogretriever">AnalogRetriever</a> 被 <strong>ICCAD 2026</strong> 录用。</span></div></li><li><time datetime="2026-05">2026.05</time><div><span class="lang-en" lang="en"><a href="#lithogrpo">LithoGRPO</a> has been accepted to <strong>ICML 2026</strong>.</span><span class="lang-zh" lang="zh-CN"><a href="#lithogrpo">LithoGRPO</a> 被 <strong>ICML 2026</strong> 录用。</span></div></li><li><time datetime="2026-03">2026.03</time><div><span class="lang-en" lang="en">Our paper on multi-input collaborative-flip energy harvesting has been accepted to <strong>IEEE TVLSI</strong>.</span><span class="lang-zh" lang="zh-CN">多输入协同翻转能量采集设计方法论文被 <strong>IEEE TVLSI</strong> 录用。</span></div></li><li><time datetime="2026-01">2026.01</time><div><span class="lang-en" lang="en">Our survey on LLMs for EDA has been accepted to <strong>Acta Electronica Sinica</strong>.</span><span class="lang-zh" lang="zh-CN">大语言模型在电子设计自动化中的应用综述被<strong>《电子学报》</strong>录用。</span></div></li><li><time datetime="2026-01">2026.01</time><div><span class="lang-en" lang="en">Our paper on a dual-path SSHC rectifier has been accepted to <strong>ISCAS 2026</strong>.</span><span class="lang-zh" lang="zh-CN">双路径 SSHC 整流器论文被 <strong>ISCAS 2026</strong> 录用。</span></div></li></ul></section>
       <section id="experience" aria-labelledby="experience-title"><h2 class="section-title" id="experience-title"><span class="lang-en" lang="en">Education & Experience</span><span class="lang-zh" lang="zh-CN">教育与工作经历</span></h2><div class="experience">
         <div class="experience-item"><img class="institution-logo" src="https://friyawang.github.io/images/njupt.png" alt="NJUPT" width="42" height="42" loading="lazy"><div><h3><span class="lang-en" lang="en">Nanjing University of Posts and Telecommunications</span><span class="lang-zh" lang="zh-CN">南京邮电大学</span></h3><p><span class="lang-en" lang="en">Associate Professor<br>(Tenure-track)</span><span class="lang-zh" lang="zh-CN">预聘副教授</span></p><p class="experience-date"><span class="lang-en" lang="en">2025.06 – Present</span><span class="lang-zh" lang="zh-CN">2025.06 – 至今</span></p></div></div>
         <div class="experience-item"><img class="institution-logo" src="https://friyawang.github.io/images/fdu.png" alt="Fudan University" width="42" height="42" loading="lazy"><div><h3><span class="lang-en" lang="en">Fudan University</span><span class="lang-zh" lang="zh-CN">复旦大学</span></h3><p><span class="lang-en" lang="en">Ph.D. in IC and System Design · Advisor: Prof. Xiaoyang Zeng</span><span class="lang-zh" lang="zh-CN">集成电路与系统设计博士 · 导师：曾晓洋教授</span></p><p class="experience-date">2020.09 – 2025.06</p></div></div>
         <div class="experience-item"><img class="institution-logo" src="https://friyawang.github.io/images/xdu.png" alt="Xidian University" width="42" height="42" loading="lazy"><div><h3><span class="lang-en" lang="en">Xidian University</span><span class="lang-zh" lang="zh-CN">西安电子科技大学</span></h3><p><span class="lang-en" lang="en">B.E. in Microelectronic Science and Engineering</span><span class="lang-zh" lang="zh-CN">微电子科学与工程学士</span></p><p class="experience-date">2016.09 – 2020.06</p></div></div>
       </div></section>
-      <section id="teaching" aria-labelledby="teaching-title"><h2 class="section-title" id="teaching-title"><span class="lang-en" lang="en">Teaching</span><span class="lang-zh" lang="zh-CN">教学</span></h2><p><span class="lang-en" lang="en"><strong>Fall 2026</strong> · Analog Integrated Circuit Design and Analysis<br><span class="publication-note">Undergraduate course</span></span><span class="lang-zh" lang="zh-CN"><strong>2026 年秋季</strong> · 模拟集成电路设计与分析<br><span class="publication-note">本科生课程</span></span></p></section>
-      <section id="service" aria-labelledby="service-title"><h2 class="section-title" id="service-title"><span class="lang-en" lang="en">Academic Service</span><span class="lang-zh" lang="zh-CN">学术服务</span></h2><dl class="service-list"><dt><span class="lang-en" lang="en">Session Chair</span><span class="lang-zh" lang="zh-CN">分会场主席</span></dt><dd>ASICON 2025</dd><dt><span class="lang-en" lang="en">Reviewer</span><span class="lang-zh" lang="zh-CN">审稿服务</span></dt><dd>IEEE TVLSI, IEEE TIE, IEEE TCAS-II, Microelectronics Journal</dd></dl></section>
+      <section id="teaching" aria-labelledby="teaching-title"><h2 class="section-title" id="teaching-title"><span class="lang-en" lang="en">Teaching</span><span class="lang-zh" lang="zh-CN">教学</span></h2><p><span class="lang-en" lang="en"><strong>Fall 2026</strong> · Analog Integrated Circuit Design and Analysis<br><span class="publication-note">Core course for third-year undergraduates · 3 credits</span></span><span class="lang-zh" lang="zh-CN"><strong>2026 年秋季</strong> · 模拟集成电路设计与分析<br><span class="publication-note">本科三年级专业核心课程 · 3 学分</span></span></p></section>
+      <section id="service" aria-labelledby="service-title"><h2 class="section-title" id="service-title"><span class="lang-en" lang="en">Academic Service</span><span class="lang-zh" lang="zh-CN">学术服务</span></h2><dl class="service-list"><dt><span class="lang-en" lang="en">Session Chair</span><span class="lang-zh" lang="zh-CN">分会场主席</span></dt><dd>ASICON 2025</dd><dt><span class="lang-en" lang="en">Reviewer</span><span class="lang-zh" lang="zh-CN">审稿服务</span></dt><dd>IEEE ISCAS, IEEE TVLSI, IEEE TIE, IEEE TCAS-II, Microelectronics Journal</dd></dl></section>
       <section id="publications" aria-labelledby="publications-title"><h2 class="section-title" id="publications-title"><span class="lang-en" lang="en">Selected Publications</span><span class="lang-zh" lang="zh-CN">论文选录</span></h2><p class="publication-note"><span class="lang-en" lang="en">† Corresponding author · * Equal contribution</span><span class="lang-zh" lang="zh-CN">† 通讯作者 · * 同等贡献</span></p><article class="publication" id="analog-design-bench">
       <div class="pub-meta"><span class="venue">arXiv 2026</span><span><span class="lang-en" lang="en">Preprint · Benchmark</span><span class="lang-zh" lang="zh-CN">预印本 · 评测基准</span></span><span class="role"><span class="lang-en" lang="en">Team member</span><span class="lang-zh" lang="zh-CN">团队成员</span></span></div>
       <h3 class="pub-title"><span class="lang-en" lang="en">Long-Horizon Analog Design Bench: Benchmarking Agents on Hours-Long Analog and Mixed-Signal Circuit Design Tasks</span><span class="lang-zh" lang="zh-CN">Long-Horizon Analog Design Bench: Benchmarking Agents on Hours-Long Analog and Mixed-Signal Circuit Design Tasks</span></h3><p class="pub-authors">Analog Design Bench Team</p><p class="pub-team"><span class="lang-en" lang="en">Team member: <strong>Jing Wang</strong></span><span class="lang-zh" lang="zh-CN">团队成员：<strong>王静（Jing Wang）</strong></span></p>
@@ -289,29 +285,37 @@
   <script>
   (() => {
     const root = document.documentElement;
-    const themeSelect = document.getElementById('theme-select');
+    const themeButton = document.getElementById('theme-toggle');
     const languageButton = document.getElementById('language-toggle');
     const languageLabel = document.getElementById('language-label');
     const colorMeta = document.querySelector('meta[name="theme-color"]');
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
     const persist = (key,value) => { try { localStorage.setItem(key,value); } catch (_) {} };
+    function updateThemeButton() {
+      const dark = root.dataset.theme === 'dark';
+      const label = root.dataset.lang === 'zh'
+        ? (dark ? '开灯：切换到日间模式' : '关灯：切换到夜间模式')
+        : (dark ? 'Switch to light mode' : 'Switch to dark mode');
+      themeButton.setAttribute('aria-label',label);
+      themeButton.setAttribute('title',label);
+    }
     function applyTheme(preference) {
       root.dataset.themePreference = preference;
       root.dataset.theme = preference === 'system' ? (systemTheme.matches ? 'dark' : 'light') : preference;
-      themeSelect.value = preference;
       colorMeta.content = root.dataset.theme === 'dark' ? '#121720' : '#fafbfd';
+      updateThemeButton();
     }
     function applyLanguage(lang) {
       root.dataset.lang = lang;
       root.lang = lang === 'zh' ? 'zh-CN' : 'en';
       languageLabel.textContent = lang === 'zh' ? 'EN' : '中文';
       languageButton.setAttribute('aria-label', lang === 'zh' ? 'Switch to English' : '切换到中文');
-      themeSelect.setAttribute('aria-label', lang === 'zh' ? '颜色主题' : 'Color theme');
-      themeSelect.querySelectorAll('option').forEach(option => { option.textContent = option.dataset[lang]; });
+      updateThemeButton();
     }
-    themeSelect.addEventListener('change', () => {
-      applyTheme(themeSelect.value);
-      persist('jw-theme',themeSelect.value);
+    themeButton.addEventListener('click', () => {
+      const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(theme);
+      persist('jw-theme',theme);
     });
     languageButton.addEventListener('click', () => {
       const lang = root.dataset.lang === 'en' ? 'zh' : 'en';
