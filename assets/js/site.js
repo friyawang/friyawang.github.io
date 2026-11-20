@@ -18,7 +18,7 @@
   function applyTheme(preference) {
     root.dataset.themePreference = preference;
     root.dataset.theme = preference === 'system' ? (systemTheme.matches ? 'dark' : 'light') : preference;
-    colorMeta.content = root.dataset.theme === 'dark' ? '#0f141c' : '#f7f8fb';
+    colorMeta.content = root.dataset.theme === 'dark' ? '#111317' : '#ffffff';
     updateThemeButton();
   }
   function applyLanguage(lang) {
