@@ -63,6 +63,7 @@
     [data-theme="dark"] .theme-icon-sun { display:block; }
     [data-theme="dark"] .theme-icon-moon { display:none; }
     .layout { max-width:1160px; margin:0 auto; padding:56px 32px 0; display:grid; grid-template-columns:238px minmax(0,1fr); gap:72px; align-items:start; }
+    .layout.layout-single { max-width:1000px; grid-template-columns:minmax(0,1fr); }
     .profile { position:sticky; top:112px; }
     .portrait { display:block; width:156px; height:auto; max-width:100%; border-radius:12px; border:1px solid var(--line); margin:0 0 24px; box-shadow:var(--shadow); }
     .profile h1 { font-size:32px; line-height:1.2; letter-spacing:-1.1px; margin:0 0 8px; }
@@ -205,16 +206,7 @@
       <button class="control theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg></button>
     </div>
   </div></header>
-  <div class="layout">
-    <aside class="profile" aria-label="Profile">
-      <div class="profile-heading"><h1>Jing Wang</h1><p class="native-name" lang="zh-CN">王静</p><p class="position"><span class="lang-en" lang="en">Tenure-track Associate Professor</span><span class="lang-zh" lang="zh-CN">预聘副教授</span></p></div>
-      <p class="affiliation"><a href="https://www.njupt.edu.cn/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">Nanjing University of Posts and Telecommunications</span><span class="lang-zh" lang="zh-CN">南京邮电大学</span></a><span class="school"><span class="lang-en" lang="en">School of Integrated Circuit Science and Engineering</span><span class="lang-zh" lang="zh-CN">集成电路科学与工程学院</span></span></p>
-      <address class="contact-list">
-        <div class="contact-line"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><a href="mailto:wangjing25@njupt.edu.cn">wangjing25 [at] njupt [dot] edu [dot] cn</a></div>
-        <div class="contact-line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><span class="lang-en" lang="en">Room B518, Dianguang Building<br>Xianlin Campus</span><span class="lang-zh" lang="zh-CN">仙林校区<br>电光学科楼 B518</span></span></div>
-        <div class="contact-line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 8 10-5 10 5-10 5Zm4 3v6c4 3 8 3 12 0v-6m4-3v9"/></svg><span><a href="https://scholar.google.com/citations?hl=en&amp;user=YH18iEsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> <span aria-hidden="true">·</span> <a href="https://orcid.org/0000-0003-3136-4299" title="ORCID iD: 0000-0003-3136-4299" target="_blank" rel="me noopener noreferrer">ORCID</a></span></div>
-      </address>
-    </aside>
+  <div class="layout layout-single">
     <main id="main">
       <section id="publications" aria-labelledby="publications-title">
         <h2 class="section-title" id="publications-title"><span class="lang-en" lang="en">Publications</span><span class="lang-zh" lang="zh-CN">论文</span></h2><p class="publication-note"><span class="lang-en" lang="en">† Corresponding author · * Equal contribution</span><span class="lang-zh" lang="zh-CN">† 通讯作者 · * 同等贡献</span></p><nav class="publication-topics" aria-label="Publication topics"><a href="#power-management"><span class="lang-en" lang="en">Power Management IC Design</span><span class="lang-zh" lang="zh-CN">电源管理芯片设计</span></a><a href="#design-automation"><span class="lang-en" lang="en">AI for EDA</span><span class="lang-zh" lang="zh-CN">人工智能与电子设计自动化</span></a></nav><div class="publication-group" id="power-management" role="group" aria-labelledby="power-management-title">
