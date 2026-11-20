@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Publications by Jing Wang in power management IC design and electronic design automation.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#fafbfd">
+  <meta name="theme-color" content="#f7f8fb">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Publications · 论文 | Jing Wang">
   <meta property="og:description" content="Publications by Jing Wang in power management IC design and electronic design automation.">
@@ -14,7 +14,6 @@
   <meta name="twitter:card" content="summary">
   <link rel="canonical" href="https://friyawang.github.io/publications/">
   <title>Publications · 论文 | Jing Wang</title>
-  
   <script>
   (() => {
     let theme = 'system', lang = 'en';
@@ -28,171 +27,7 @@
     root.lang = lang === 'zh' ? 'zh-CN' : 'en';
   })();
   </script>
-  <style>
-    :root { color-scheme:light; --bg:#fafbfd; --surface:#fff; --ink:#202a3b; --text:#455166; --muted:#647086; --line:#e1e6ee; --accent:#285bc2; --accent-soft:#edf3ff; --hover:#f0f3f8; --shadow:0 10px 34px rgba(23,43,77,.06); --tag:#f0f3f7; }
-    :root[data-theme="dark"] { color-scheme:dark; --bg:#121720; --surface:#19212d; --ink:#eaf0f8; --text:#bac5d6; --muted:#93a1b7; --line:#2d3746; --accent:#91b8ff; --accent-soft:#202f48; --hover:#202a38; --shadow:0 10px 34px rgba(0,0,0,.12); --tag:#222d3c; }
-    *,*::before,*::after { box-sizing:border-box; }
-    html { scroll-behavior:smooth; scroll-padding-top:100px; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,"Noto Sans",Arial,"PingFang SC","Microsoft YaHei",sans-serif; font-size:16px; line-height:1.75; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; }
-    button { font:inherit; }
-    a { color:var(--accent); text-decoration:none; text-underline-offset:4px; }
-    a:hover { text-decoration:underline; }
-    button,a { -webkit-tap-highlight-color:transparent; }
-    :focus-visible { outline:3px solid var(--accent); outline-offset:4px; border-radius:4px; }
-    p { margin:0 0 16px; }
-    strong { color:var(--ink); font-weight:600; }
-    h1,h2,h3,h4,h5 { color:var(--ink); font-weight:650; }
-    [data-lang="en"] .lang-zh,[data-lang="zh"] .lang-en { display:none !important; }
-    .skip-link { position:fixed; left:20px; top:-80px; z-index:20; background:var(--surface); padding:10px 16px; border:1px solid var(--line); }
-    .skip-link:focus { top:12px; }
-    .topbar { position:sticky; top:0; z-index:10; background:var(--bg); border-bottom:1px solid var(--line); }
-    .topbar-inner { max-width:1160px; margin:auto; min-height:72px; padding:12px 32px; display:flex; align-items:center; gap:16px; }
-    .wordmark { color:var(--ink); font-weight:650; font-size:17px; letter-spacing:-.3px; white-space:nowrap; }
-    .wordmark span { margin-left:10px; color:var(--muted); font-size:14px; font-weight:400; letter-spacing:0; }
-    .page-nav { display:flex; align-items:center; gap:6px; margin-inline-start:auto; }
-    .page-nav a { display:flex; justify-content:center; align-items:center; min-height:42px; padding:5px 13px; border:1px solid var(--line); border-radius:8px; background:var(--surface); color:var(--text); font-size:.9rem; font-weight:500; line-height:1.25; text-align:center; }
-    .page-nav a:hover { color:var(--accent); border-color:var(--accent); text-decoration:none; }
-    .page-nav a[aria-current="page"] { color:var(--accent); border-color:var(--accent); background:var(--accent-soft); font-weight:650; }
-    .toolbar { display:flex; align-items:center; gap:10px; }
-    .control { display:flex; align-items:center; gap:7px; min-height:44px; padding:5px 11px; color:var(--text); background:var(--surface); border:1px solid var(--line); border-radius:8px; cursor:pointer; font-size:14px; }
-    .control:hover { background:var(--hover); }
-    .control svg { width:17px; height:17px; stroke:currentColor; fill:none; stroke-width:1.6; flex:none; }
-    .theme-toggle { width:44px; height:44px; padding:0; justify-content:center; }
-    .theme-toggle svg { width:20px; height:20px; }
-    .theme-icon-sun { display:none; }
-    [data-theme="dark"] .theme-icon-sun { display:block; }
-    [data-theme="dark"] .theme-icon-moon { display:none; }
-    .layout { max-width:1160px; margin:0 auto; padding:56px 32px 0; display:grid; grid-template-columns:238px minmax(0,1fr); gap:72px; align-items:start; }
-    .profile { position:sticky; top:112px; }
-    .portrait { display:block; width:156px; height:auto; max-width:100%; border-radius:12px; border:1px solid var(--line); margin:0 0 24px; box-shadow:var(--shadow); }
-    .profile h1 { font-size:32px; line-height:1.2; letter-spacing:-1.1px; margin:0 0 8px; }
-    .native-name { font-size:21px; font-weight:400; letter-spacing:.12em; color:var(--muted); margin:0 0 18px; }
-    .position { font-size:15px; line-height:1.65; color:var(--ink); margin:0 0 9px; }
-    .affiliation { font-size:14px; line-height:1.65; margin-bottom:22px; }
-    .affiliation .school { display:block; color:var(--muted); margin-top:6px; }
-    .contact-list { display:grid; gap:12px; font-style:normal; font-size:14px; line-height:1.6; }
-    .contact-line { display:flex; gap:10px; align-items:flex-start; }
-    .contact-line svg { width:17px; height:17px; margin-top:3px; flex:none; fill:none; stroke:var(--muted); stroke-width:1.6; }
-    .contact-line a { overflow-wrap:anywhere; }
-    main { min-width:0; }
-    section { margin:0 0 46px; }
-    .section-title { font-size:23px; line-height:1.35; letter-spacing:-.55px; margin:0 0 21px; display:flex; align-items:center; gap:16px; }
-    .section-title::after { content:""; height:1px; flex:1; background:var(--line); }
-    .intro { font-size:16px; line-height:1.85; }
-    .research-heading { margin:24px 0 8px; font-size:1.08rem; }
-    .research-list { margin:0; padding-inline-start:1.6em; font-size:1rem; }
-    .research-list li { padding-inline-start:.25em; margin-bottom:8px; }
-    .research-list li::marker { color:var(--muted); }
-    .opportunities { border-left:3px solid var(--accent); padding:14px 18px; background:var(--accent-soft); border-radius:0 8px 8px 0; margin-top:24px; }
-    .opportunities h3 { font-size:16px; margin:0 0 5px; }
-    .opportunities p { font-size:1rem; line-height:1.75; margin:0; }
-    .opportunities p + p { margin-top:8px; }
-    .news-list { list-style:none; margin:0; padding:0; }
-    .news-list li { display:grid; grid-template-columns:78px minmax(0,1fr); gap:16px; margin:0 0 16px; font-size:15px; line-height:1.75; }
-    .news-list time { color:var(--muted); font-size:14px; font-variant-numeric:tabular-nums; padding-top:1px; }
-    .experience { display:grid; gap:22px; }
-    .experience-item { display:grid; grid-template-columns:42px minmax(0,1fr); gap:16px; align-items:start; }
-    .institution-logo { width:42px; height:42px; object-fit:contain; background:#fff; padding:4px; border-radius:8px; }
-    .experience-item h4 { font-size:16px; line-height:1.6; margin:0 0 2px; }
-    .experience-item p { font-size:14px; line-height:1.65; margin:0; }
-    .experience-date { font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; }
-    .plain-list { margin:0; padding-left:19px; }
-    .plain-list li { padding-left:3px; margin-bottom:10px; font-size:15px; line-height:1.75; }
-    .subheading { font-size:16px; margin:22px 0 12px; }
-    .section-block { margin-top:26px; }
-    .section-block > h3 { margin:0 0 12px; font-size:1.12rem; }
-    .service-list { display:grid; grid-template-columns:104px 1fr; gap:9px 16px; font-size:15px; margin:0; }
-    .service-list dt { font-weight:500; color:var(--ink); }
-    .service-list dd { margin:0; }
-    .publication-note { color:var(--muted); font-size:14px; margin:-6px 0 10px; }
-    .publication-topics { display:flex; flex-wrap:wrap; gap:8px 20px; margin:14px 0 28px; font-size:14px; }
-    .publication-group + .publication-group { margin-top:36px; }
-    .publication-group-title { font-size:19px; line-height:1.5; margin:0 0 4px; padding-left:13px; border-left:3px solid var(--accent); }
-    .publication { border-bottom:1px solid var(--line); padding:24px 0; }
-    .publication:last-child { border-bottom:0; }
-    .pub-title { font-size:17px; line-height:1.6; margin:0 0 7px; font-weight:600; letter-spacing:-.15px; overflow-wrap:anywhere; }
-    .pub-title a { color:inherit; }
-    .pub-venue { color:var(--accent); font-size:.88em; font-weight:500; white-space:nowrap; margin-inline-end:.16em; }
-    .pub-title a:hover,.pub-title a:focus-visible { color:var(--accent); }
-    .pub-authors { font-size:14px; line-height:1.8; margin:0 0 4px; }
-    .publication[lang="zh-CN"] .pub-authors { word-break:keep-all; }
-    .author-role {
-      display:inline-block; vertical-align:baseline; white-space:nowrap;
-      margin-inline-start:.25em; padding:.05em .55em; border-radius:5px;
-      color:var(--accent); background:var(--accent-soft); font-size:12px; line-height:1.5; font-weight:600;
-    }
-    .pub-citation { font-size:13px; color:var(--muted); line-height:1.7; margin:0 0 10px; }
-    sup { font-size:.75em; }
-    .pub-links { display:flex; flex-wrap:wrap; align-items:center; gap:4px 16px; margin:0; }
-    .resource-link { display:inline-block; font-size:14px; font-weight:500; text-decoration:underline; }
-    .pdf-link { border:1px solid var(--line); border-radius:4px; padding:1px 7px; text-decoration:none; }
-    .pdf-link:hover,.pdf-link:focus-visible { border-color:var(--accent); background:var(--accent-soft); text-decoration:none; }
-    .site-footer { margin-top:10px; padding:26px 0 32px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; color:var(--muted); font-size:13px; }
-    .site-footer p { margin:0; }
-    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-    @media (min-width:881px) and (max-height:780px) { .profile { position:static; } }
-    @media (max-width:1050px) { .layout { gap:46px; grid-template-columns:220px minmax(0,1fr); } }
-    @media (max-width:880px) {
-      .layout { grid-template-columns:minmax(0,1fr); gap:40px; max-width:760px; padding-top:34px; }
-      .profile { position:static; display:grid; grid-template-columns:140px minmax(0,1fr); column-gap:28px; }
-      .portrait { grid-column:1; grid-row:1/5; width:140px; margin:0; }
-      .profile-heading,.affiliation,.contact-list { grid-column:2; }
-      .profile h1 { font-size:30px; }
-      .native-name { margin-bottom:12px; font-size:18px; }
-      .position { margin-bottom:7px; }
-      .affiliation { margin-bottom:16px; }
-      .contact-list { gap:9px; }
-    }
-    @media (max-width:720px) {
-      html { scroll-padding-top:126px; }
-      .topbar-inner { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:6px 12px; padding:8px 20px 10px; }
-      .toolbar { grid-row:1; grid-column:2; }
-      .page-nav { grid-column:1/-1; grid-row:2; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; }
-      .page-nav a { min-height:40px; padding-inline:4px; font-size:.875rem; }
-    }
-    @media (max-width:560px) {
-      .wordmark { font-size:15px; }
-      .wordmark span { display:none; }
-      .toolbar { gap:7px; }
-      .control { font-size:14px; padding-left:9px; padding-right:9px; }
-      .theme-control { padding-right:25px; }
-      .theme-control select { max-width:94px; font-size:14px; }
-      .layout { padding:28px 20px 0; gap:34px; }
-      .profile { grid-template-columns:100px minmax(0,1fr); gap:0 20px; }
-      .portrait { width:100px; grid-row:1/3; border-radius:9px; }
-      .profile h1 { font-size:28px; }
-      .native-name { font-size:17px; margin-bottom:12px; }
-      .position { font-size:14px; }
-      .affiliation { grid-column:1/-1; margin-top:18px; margin-bottom:14px; }
-      .contact-list { grid-column:1/-1; font-size:14px; }
-      .section-title { font-size:21px; }
-      section { margin-bottom:36px; }
-      .news-list li { grid-template-columns:66px minmax(0,1fr); gap:12px; }
-      .news-list time { font-size:14px; }
-      .pub-title { font-size:16px; }
-      .publication { padding:22px 0; }
-      .service-list { grid-template-columns:88px 1fr; gap:9px 12px; }
-    }
-    @media screen and (max-width:880px) {
-      body:is([data-page="biography"],[data-page="publications"]) .profile { display:flex; align-items:center; gap:14px; }
-      body:is([data-page="biography"],[data-page="publications"]) .portrait { width:60px; margin:0; }
-      body:is([data-page="biography"],[data-page="publications"]) .profile-heading { display:grid; grid-template-columns:auto auto; align-items:baseline; column-gap:8px; }
-      body:is([data-page="biography"],[data-page="publications"]) .profile h1 { font-size:1.375rem; margin:0; }
-      body:is([data-page="biography"],[data-page="publications"]) .native-name { font-size:1rem; margin:0; }
-      body:is([data-page="biography"],[data-page="publications"]) .position { grid-column:1/-1; margin:0; }
-      body:is([data-page="biography"],[data-page="publications"]) :is(.affiliation,.contact-list) { display:none; }
-    }
-    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
-    @media print {
-      :root,:root[data-theme="dark"] { --bg:#fff; --surface:#fff; --ink:#111; --text:#222; --muted:#555; --line:#ccc; --accent:#164493; --accent-soft:#fff; --tag:#fff; }
-      .topbar,.skip-link { display:none; }
-      .layout { display:block; padding:0; }
-      .profile { position:static; margin-bottom:24px; }
-      .portrait { width:90px; float:right; }
-      .publication { break-inside:avoid; }
-      .site-footer { padding:10px 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="/assets/css/site.css">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Jing Wang", "alternateName": "王静", "url": "https://friyawang.github.io/", "image": "https://friyawang.github.io/images/wj-avatar.jpg", "email": "wangjing25@njupt.edu.cn", "jobTitle": "Associate Professor", "affiliation": {"@type": "Organization", "name": "Nanjing University of Posts and Telecommunications"}, "sameAs": ["https://scholar.google.com/citations?user=YH18iEsAAAAJ", "https://orcid.org/0000-0003-3136-4299", "https://ic.njupt.edu.cn/wj1/main.htm"]}</script>
 </head>
 <body data-page="publications">
@@ -201,140 +36,141 @@
     <a class="wordmark" href="/">Jing Wang<span>NJUPT</span></a>
     <nav class="page-nav" aria-label="Main navigation"><a href="/"><span class="lang-en" lang="en">About Us</span><span class="lang-zh" lang="zh-CN">关于我们</span></a><a href="/biography/"><span class="lang-en" lang="en">Biography</span><span class="lang-zh" lang="zh-CN">个人简介</span></a><a href="/publications/" aria-current="page"><span class="lang-en" lang="en">Publications</span><span class="lang-zh" lang="zh-CN">论文</span></a></nav>
     <div class="toolbar">
-      <button class="control" id="language-toggle" type="button" aria-label="Switch to Chinese"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h12M9 3v2m3 0c0 6-4 9-8 11m1-8c1 4 4 6 7 7m2 6 5-12 5 12m-8-4h6"/></svg><span id="language-label">中文</span></button>
-      <button class="control theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg></button>
+      <button class="control" id="language-toggle" type="button" aria-label="切换到中文"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h12M9 3v2m3 0c0 6-4 9-8 11m1-8c1 4 4 6 7 7m2 6 5-12 5 12m-8-4h6"/></svg><span id="language-label">中文</span></button>
+      <button class="control theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode"><svg class="icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13A9 9 0 0 1 11 3.2 9 9 0 1 0 20.8 13Z"/></svg></button>
     </div>
   </div></header>
-  <div class="layout">
-    <aside class="profile" aria-label="Profile">
-      <img class="portrait" src="https://friyawang.github.io/images/wj-avatar.jpg" alt="Jing Wang" width="156" fetchpriority="high">
-      <div class="profile-heading"><h1>Jing Wang</h1><p class="native-name" lang="zh-CN">王静</p><p class="position"><span class="lang-en" lang="en">Associate Professor</span><span class="lang-zh" lang="zh-CN">副教授</span></p></div>
-      <p class="affiliation"><a href="https://www.njupt.edu.cn/" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">Nanjing University of Posts and Telecommunications</span><span class="lang-zh" lang="zh-CN">南京邮电大学</span></a><span class="school"><span class="lang-en" lang="en">School of Integrated Circuit Science and Engineering</span><span class="lang-zh" lang="zh-CN">集成电路科学与工程学院</span></span></p>
-      <address class="contact-list">
-        <div class="contact-line"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg><a href="mailto:wangjing25@njupt.edu.cn">wangjing25 [at] njupt [dot] edu [dot] cn</a></div>
-        <div class="contact-line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span><span class="lang-en" lang="en">Room B518, Dianguang Building<br>Xianlin Campus</span><span class="lang-zh" lang="zh-CN">仙林校区<br>电光学科楼 B518</span></span></div>
-        <div class="contact-line"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m2 8 10-5 10 5-10 5Zm4 3v6c4 3 8 3 12 0v-6m4-3v9"/></svg><span><a href="https://scholar.google.com/citations?hl=en&amp;user=YH18iEsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a> <span aria-hidden="true">·</span> <a href="https://orcid.org/0000-0003-3136-4299" title="ORCID iD: 0000-0003-3136-4299" target="_blank" rel="me noopener noreferrer">ORCID</a></span></div>
-      </address>
-    </aside>
-    <main id="main">
-      <section id="publications" aria-labelledby="publications-title">
-        <h2 class="section-title" id="publications-title"><span class="lang-en" lang="en">Publications</span><span class="lang-zh" lang="zh-CN">论文</span></h2><p class="publication-note"><span class="lang-en" lang="en">† Corresponding author · * Equal contribution</span><span class="lang-zh" lang="zh-CN">† 通讯作者 · * 同等贡献</span></p><nav class="publication-topics" aria-label="Publication topics"><a href="#power-management"><span class="lang-en" lang="en">Power Management IC Design</span><span class="lang-zh" lang="zh-CN">电源管理芯片设计</span></a><a href="#design-automation"><span class="lang-en" lang="en">AI for EDA</span><span class="lang-zh" lang="zh-CN">人工智能与电子设计自动化</span></a></nav><div class="publication-group" id="power-management" role="group" aria-labelledby="power-management-title">
-      <h3 class="publication-group-title" id="power-management-title"><span class="lang-en" lang="en">Power Management IC Design</span><span class="lang-zh" lang="zh-CN">电源管理芯片设计</span></h3>
+
+  <main id="main" class="container">
+    <header class="page-header">
+      <p class="eyebrow"><span class="lang-en" lang="en">Research output</span><span class="lang-zh" lang="zh-CN">科研成果</span></p>
+      <h1 id="publications-title"><span class="lang-en" lang="en">Publications</span><span class="lang-zh" lang="zh-CN">论文</span></h1>
+      <p><span class="lang-en" lang="en">Journal and conference papers, grouped by research direction. For a complete and up-to-date list, see <a href="https://scholar.google.com/citations?hl=en&amp;user=YH18iEsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</span><span class="lang-zh" lang="zh-CN">按研究方向整理的期刊与会议论文。完整列表请见 <a href="https://scholar.google.com/citations?hl=en&amp;user=YH18iEsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>。</span></p>
+    </header>
+
+    <section id="publications" aria-labelledby="publications-title">
+      <nav class="pub-filter" aria-label="Publication topics"><a href="#power-management"><span class="lang-en" lang="en">Power Management IC Design</span><span class="lang-zh" lang="zh-CN">电源管理芯片设计</span><span class="count">9</span></a><a href="#design-automation"><span class="lang-en" lang="en">AI for EDA</span><span class="lang-zh" lang="zh-CN">人工智能与电子设计自动化</span><span class="count">6</span></a></nav>
+      <p class="pub-legend"><span class="lang-en" lang="en"><strong>Bold</strong>: Jing Wang · † Corresponding author · * Equal contribution</span><span class="lang-zh" lang="zh-CN"><strong>加粗</strong>：王静 · † 通讯作者 · * 同等贡献</span></p>
+      <div class="publication-group" id="power-management" role="group" aria-labelledby="power-management-title">
+      <h2 class="publication-group-title" id="power-management-title"><span class="lang-en" lang="en">Power Management IC Design</span><span class="lang-zh" lang="zh-CN">电源管理芯片设计</span></h2>
       <article class="publication" id="tvlsi-2026" data-date="2026-06">
-      <h4 class="pub-title"><span class="pub-venue">[TVLSI’26]</span> <a href="https://doi.org/10.1109/TVLSI.2026.3680100" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">A Generalized Design Methodology for Multi-Input Collaborative-Flip Synchronized Switch Harvesting on Capacitors: From Theory to Optimization Strategy</span><span class="lang-zh" lang="zh-CN">A Generalized Design Methodology for Multi-Input Collaborative-Flip Synchronized Switch Harvesting on Capacitors: From Theory to Optimization Strategy</span></a></h4>
-      <p class="pub-authors"><strong>J. Wang</strong>, Y. Yang, J. Zhao, Z. Li, Y. Zhang, K. Yang, J. Yao, X. Zeng<sup>†</sup>, Y. Guo<sup>†</sup></p>
-      <p class="pub-citation">IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 34, no. 6, pp. 1837–1847, June 2026. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=11482690" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article><article class="publication" id="iscas-2026" data-date="2026-05">
-      <h4 class="pub-title"><span class="pub-venue">[ISCAS’26]</span> <a href="https://doi.org/10.1109/ISCAS66217.2026.11562892" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">A Dual-Path SSHC Rectifier with Decoupled Battery Architecture for Enhanced Piezoelectric Energy Harvesting</span><span class="lang-zh" lang="zh-CN">A Dual-Path SSHC Rectifier with Decoupled Battery Architecture for Enhanced Piezoelectric Energy Harvesting</span></a></h4>
-      <p class="pub-authors"><strong>J. Wang</strong>, Y. Yang, Z. Li, Y. Zhang, J. Yao, X. Zeng, Y. Guo<sup>†</sup></p>
-      <p class="pub-citation">IEEE International Symposium on Circuits and Systems (ISCAS), pp. 2763–2767, 2026. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=11562892" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article><article class="publication" id="tpel-2025" data-date="2025-10">
-      <h4 class="pub-title"><span class="pub-venue">[TPEL’25]</span> <a href="https://doi.org/10.1109/TPEL.2025.3577696" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">An Energy Harvesting Interface Based on Reconfigurable Piezoelectric Harvester Array</span><span class="lang-zh" lang="zh-CN">An Energy Harvesting Interface Based on Reconfigurable Piezoelectric Harvester Array</span></a></h4>
-      <p class="pub-authors">Z. Chen, X. Hao, Z. Li<sup>†</sup>, Y. Ma, <strong>J. Wang</strong><sup>†</sup>, X. Liu, S. Du, J. Han, X. Zeng</p>
-      <p class="pub-citation">IEEE Transactions on Power Electronics, vol. 40, no. 10, pp. 15949–15958, October 2025. <span class="author-role"><span class="lang-en" lang="en">Corresponding author</span><span class="lang-zh" lang="zh-CN">通讯作者</span></span></p><p class="pub-links"><a href="https://repository.tudelft.nl/file/File_2378a830-feb4-4379-a0da-c5933783baa5" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article><article class="publication" id="jssc-2025" data-date="2025-04">
-      <h4 class="pub-title"><span class="pub-venue">[JSSC’25]</span> <a href="https://doi.org/10.1109/JSSC.2024.3452113" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">Enhancing Efficiency in Piezoelectric Energy Harvesting: Collaborative-Flip Synchronized Switch Harvesting on Capacitors Rectifier and Multioutput DC-DC Converters Utilizing Shared Capacitors</span><span class="lang-zh" lang="zh-CN">Enhancing Efficiency in Piezoelectric Energy Harvesting: Collaborative-Flip Synchronized Switch Harvesting on Capacitors Rectifier and Multioutput DC-DC Converters Utilizing Shared Capacitors</span></a></h4>
-      <p class="pub-authors"><strong>J. Wang</strong>, Y. Yang, Z. Li, S. Du, X. Yue, X. Liu, J. Han, X. Zeng, Z. Chen</p>
-      <p class="pub-citation">IEEE Journal of Solid-State Circuits, vol. 60, no. 4, pp. 1474–1485, April 2025. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://repository.tudelft.nl/file/File_df0eece5-43d8-4b45-9b40-01a7941654f1" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article><article class="publication" id="tcas-2024" data-date="2024-08">
-      <h4 class="pub-title"><span class="pub-venue">[TCAS-II’24]</span> <a href="https://doi.org/10.1109/TCSII.2024.3376545" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">An Ultra-Efficient and Compact Flipping-Input Synchronized Switch Harvesting on Inductor and Capacitors Interface Circuit for Piezoelectric Energy Harvesting</span><span class="lang-zh" lang="zh-CN">An Ultra-Efficient and Compact Flipping-Input Synchronized Switch Harvesting on Inductor and Capacitors Interface Circuit for Piezoelectric Energy Harvesting</span></a></h4>
-      <p class="pub-authors">Q. Zuo, X. Hao, <strong>J. Wang</strong>, Y. Ma, J. Liu, Q. Kuai, Z. Guo, J. Jiang, Z. Chen</p>
-      <p class="pub-citation">IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 71, no. 8, pp. 4000–4004, August 2024.</p><p class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10470391" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article><article class="publication" id="jssc-2024" data-date="2024-07">
-      <h4 class="pub-title"><span class="pub-venue">[JSSC’24]</span> <a href="https://doi.org/10.1109/JSSC.2023.3341865" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">Piezoelectric Energy Harvesting Interface Using Self-Bias-Flip Rectifier and Switched-PEH DC–DC for MPPT</span><span class="lang-zh" lang="zh-CN">Piezoelectric Energy Harvesting Interface Using Self-Bias-Flip Rectifier and Switched-PEH DC–DC for MPPT</span></a></h4>
-      <p class="pub-authors">Z. Li, <strong>J. Wang</strong>, M. K. Law, S. Du, J. Liang, X. Cheng, J. Han, X. Zeng, Z. Chen</p>
-      <p class="pub-citation">IEEE Journal of Solid-State Circuits, vol. 59, no. 7, pp. 2248–2259, July 2024.</p><p class="pub-links"><a href="https://metal.shanghaitech.edu.cn/publication/J85.pdf" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article><article class="publication" id="tpel-2023" data-date="2023-09">
-      <h4 class="pub-title"><span class="pub-venue">[TPEL’23]</span> <a href="https://doi.org/10.1109/TPEL.2023.3286399" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">A Self-Bias-Flip With Charge Recycle Interface Circuit With No External Energy Reservoir for Piezoelectric Energy Harvesting Array</span><span class="lang-zh" lang="zh-CN">A Self-Bias-Flip With Charge Recycle Interface Circuit With No External Energy Reservoir for Piezoelectric Energy Harvesting Array</span></a></h4>
-      <p class="pub-authors">Z. Li, Z. Chen, <strong>Jing Wang</strong>, Jiawei Wang, J. Jiang, S. Du, X. Cheng, X. Zeng, J. Han</p>
-      <p class="pub-citation">IEEE Transactions on Power Electronics, vol. 38, no. 9, pp. 11630–11641, September 2023.</p><p class="pub-links"><a href="https://repository.tudelft.nl/file/File_5f4960e6-f4bf-4e95-aaae-048312b8dc1e" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article><article class="publication" id="tcas-2022" data-date="2022-07">
-      <h4 class="pub-title"><span class="pub-venue">[TCAS-II’22]</span> <a href="https://doi.org/10.1109/TCSII.2022.3173966" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">Piezoelectric Energy Harvesters: An Overview on Design Strategies and Topologies</span><span class="lang-zh" lang="zh-CN">Piezoelectric Energy Harvesters: An Overview on Design Strategies and Topologies</span></a></h4>
-      <p class="pub-authors"><strong>J. Wang</strong>, Z. Chen<sup>†</sup>, Z. Li, J. Jiang, J. Liang, X. Zeng<sup>†</sup></p>
-      <p class="pub-citation">IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 69, no. 7, pp. 3057–3063, July 2022. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://metal.shanghaitech.edu.cn/publication/J48.pdf" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article><article class="publication" id="iscas-2022" data-date="2022-05">
-      <h4 class="pub-title"><span class="pub-venue">[ISCAS’22]</span> <a href="https://doi.org/10.1109/ISCAS48785.2022.9937938" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">A Cross Regulation Reduced Multi-Output and Multi-VCR Piezoelectric Energy Harvesting System Using Shared Capacitors</span><span class="lang-zh" lang="zh-CN">A Cross Regulation Reduced Multi-Output and Multi-VCR Piezoelectric Energy Harvesting System Using Shared Capacitors</span></a></h4>
-      <p class="pub-authors"><strong>J. Wang</strong>, Z. Chen, J. Liang, X. Cheng, J. Han, X. Zeng</p>
-      <p class="pub-citation">IEEE International Symposium on Circuits and Systems (ISCAS), pp. 2768–2772, 2022. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://metal.shanghaitech.edu.cn/publication/C59.pdf" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article>
+        <div class="venue-badge v-tvlsi">TVLSI<small>2026</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/TVLSI.2026.3680100" target="_blank" rel="noopener noreferrer">A Generalized Design Methodology for Multi-Input Collaborative-Flip Synchronized Switch Harvesting on Capacitors: From Theory to Optimization Strategy</a></h3>
+          <p class="pub-authors"><strong>J. Wang</strong>, Y. Yang, J. Zhao, Z. Li, Y. Zhang, K. Yang, J. Yao, X. Zeng<sup>†</sup>, Y. Guo<sup>†</sup></p>
+          <p class="pub-citation">IEEE Transactions on Very Large Scale Integration (VLSI) Systems, vol. 34, no. 6, pp. 1837–1847, June 2026. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=11482690" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article><article class="publication" id="iscas-2026" data-date="2026-05">
+        <div class="venue-badge v-iscas">ISCAS<small>2026</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/ISCAS66217.2026.11562892" target="_blank" rel="noopener noreferrer">A Dual-Path SSHC Rectifier with Decoupled Battery Architecture for Enhanced Piezoelectric Energy Harvesting</a></h3>
+          <p class="pub-authors"><strong>J. Wang</strong>, Y. Yang, Z. Li, Y. Zhang, J. Yao, X. Zeng, Y. Guo<sup>†</sup></p>
+          <p class="pub-citation">IEEE International Symposium on Circuits and Systems (ISCAS), pp. 2763–2767, 2026. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=11562892" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article><article class="publication" id="tpel-2025" data-date="2025-10">
+        <div class="venue-badge v-tpel">TPEL<small>2025</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/TPEL.2025.3577696" target="_blank" rel="noopener noreferrer">An Energy Harvesting Interface Based on Reconfigurable Piezoelectric Harvester Array</a></h3>
+          <p class="pub-authors">Z. Chen, X. Hao, Z. Li<sup>†</sup>, Y. Ma, <strong>J. Wang</strong><sup>†</sup>, X. Liu, S. Du, J. Han, X. Zeng</p>
+          <p class="pub-citation">IEEE Transactions on Power Electronics, vol. 40, no. 10, pp. 15949–15958, October 2025. <span class="author-role"><span class="lang-en" lang="en">Corresponding author</span><span class="lang-zh" lang="zh-CN">通讯作者</span></span></p><p class="pub-links"><a href="https://repository.tudelft.nl/file/File_2378a830-feb4-4379-a0da-c5933783baa5" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article><article class="publication" id="jssc-2025" data-date="2025-04">
+        <div class="venue-badge v-jssc">JSSC<small>2025</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/JSSC.2024.3452113" target="_blank" rel="noopener noreferrer">Enhancing Efficiency in Piezoelectric Energy Harvesting: Collaborative-Flip Synchronized Switch Harvesting on Capacitors Rectifier and Multioutput DC-DC Converters Utilizing Shared Capacitors</a></h3>
+          <p class="pub-authors"><strong>J. Wang</strong>, Y. Yang, Z. Li, S. Du, X. Yue, X. Liu, J. Han, X. Zeng, Z. Chen</p>
+          <p class="pub-citation">IEEE Journal of Solid-State Circuits, vol. 60, no. 4, pp. 1474–1485, April 2025. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://repository.tudelft.nl/file/File_df0eece5-43d8-4b45-9b40-01a7941654f1" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article><article class="publication" id="tcas-2024" data-date="2024-08">
+        <div class="venue-badge v-tcas">TCAS-II<small>2024</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/TCSII.2024.3376545" target="_blank" rel="noopener noreferrer">An Ultra-Efficient and Compact Flipping-Input Synchronized Switch Harvesting on Inductor and Capacitors Interface Circuit for Piezoelectric Energy Harvesting</a></h3>
+          <p class="pub-authors">Q. Zuo, X. Hao, <strong>J. Wang</strong>, Y. Ma, J. Liu, Q. Kuai, Z. Guo, J. Jiang, Z. Chen</p>
+          <p class="pub-citation">IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 71, no. 8, pp. 4000–4004, August 2024.</p><p class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10470391" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article><article class="publication" id="jssc-2024" data-date="2024-07">
+        <div class="venue-badge v-jssc">JSSC<small>2024</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/JSSC.2023.3341865" target="_blank" rel="noopener noreferrer">Piezoelectric Energy Harvesting Interface Using Self-Bias-Flip Rectifier and Switched-PEH DC–DC for MPPT</a></h3>
+          <p class="pub-authors">Z. Li, <strong>J. Wang</strong>, M. K. Law, S. Du, J. Liang, X. Cheng, J. Han, X. Zeng, Z. Chen</p>
+          <p class="pub-citation">IEEE Journal of Solid-State Circuits, vol. 59, no. 7, pp. 2248–2259, July 2024.</p><p class="pub-links"><a href="https://metal.shanghaitech.edu.cn/publication/J85.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article><article class="publication" id="tpel-2023" data-date="2023-09">
+        <div class="venue-badge v-tpel">TPEL<small>2023</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/TPEL.2023.3286399" target="_blank" rel="noopener noreferrer">A Self-Bias-Flip With Charge Recycle Interface Circuit With No External Energy Reservoir for Piezoelectric Energy Harvesting Array</a></h3>
+          <p class="pub-authors">Z. Li, Z. Chen, <strong>Jing Wang</strong>, Jiawei Wang, J. Jiang, S. Du, X. Cheng, X. Zeng, J. Han</p>
+          <p class="pub-citation">IEEE Transactions on Power Electronics, vol. 38, no. 9, pp. 11630–11641, September 2023.</p><p class="pub-links"><a href="https://repository.tudelft.nl/file/File_5f4960e6-f4bf-4e95-aaae-048312b8dc1e" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article><article class="publication" id="tcas-2022" data-date="2022-07">
+        <div class="venue-badge v-tcas">TCAS-II<small>2022</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/TCSII.2022.3173966" target="_blank" rel="noopener noreferrer">Piezoelectric Energy Harvesters: An Overview on Design Strategies and Topologies</a></h3>
+          <p class="pub-authors"><strong>J. Wang</strong>, Z. Chen<sup>†</sup>, Z. Li, J. Jiang, J. Liang, X. Zeng<sup>†</sup></p>
+          <p class="pub-citation">IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 69, no. 7, pp. 3057–3063, July 2022. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://metal.shanghaitech.edu.cn/publication/J48.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article><article class="publication" id="iscas-2022" data-date="2022-05">
+        <div class="venue-badge v-iscas">ISCAS<small>2022</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/ISCAS48785.2022.9937938" target="_blank" rel="noopener noreferrer">A Cross Regulation Reduced Multi-Output and Multi-VCR Piezoelectric Energy Harvesting System Using Shared Capacitors</a></h3>
+          <p class="pub-authors"><strong>J. Wang</strong>, Z. Chen, J. Liang, X. Cheng, J. Han, X. Zeng</p>
+          <p class="pub-citation">IEEE International Symposium on Circuits and Systems (ISCAS), pp. 2768–2772, 2022. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://metal.shanghaitech.edu.cn/publication/C59.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article>
     </div><div class="publication-group" id="design-automation" role="group" aria-labelledby="design-automation-title">
-      <h3 class="publication-group-title" id="design-automation-title"><span class="lang-en" lang="en">AI for Electronic Design Automation</span><span class="lang-zh" lang="zh-CN">人工智能与电子设计自动化</span></h3>
+      <h2 class="publication-group-title" id="design-automation-title"><span class="lang-en" lang="en">AI for Electronic Design Automation</span><span class="lang-zh" lang="zh-CN">人工智能与电子设计自动化</span></h2>
       <article class="publication" id="analogretriever" data-date="2026-11">
-      <h4 class="pub-title"><span class="pub-venue">[ICCAD’26]</span> <a href="https://doi.org/10.1145/3831252.3834253" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">AnalogRetriever: Learning Cross-Modal Representations for Analog Circuit Retrieval</span><span class="lang-zh" lang="zh-CN">AnalogRetriever: Learning Cross-Modal Representations for Analog Circuit Retrieval</span></a></h4>
-      <p class="pub-authors">Y. Wang<sup>*</sup>, L. Li<sup>*</sup>, Y. Lai, <strong>J. Wang</strong><sup>†</sup>, Y. Lu<sup>†</sup></p>
-      <p class="pub-citation">IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026. <span class="author-role"><span class="lang-en" lang="en">Corresponding author</span><span class="lang-zh" lang="zh-CN">通讯作者</span></span></p><p class="pub-links"><a href="https://yihan-wa.github.io/AnalogRetriever/static/pdfs/AnalogRetriever_paper.pdf" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a> <a href="https://github.com/yihan-wa/AnalogRetriever_ICCAD" class="resource-link" target="_blank" rel="noopener noreferrer">GitHub</a> <a href="https://huggingface.co/spaces/eulermaxwell/AnalogRetriever" class="resource-link" target="_blank" rel="noopener noreferrer">Demo</a></p>
-    </article><article class="publication" id="icsict-2026" data-date="2026-10">
-      <h4 class="pub-title"><span class="pub-venue">[ICSICT’26]</span> <span class="lang-en" lang="en">AI-Agent-Driven Automated Design Optimization of FVF LDOs: A Parameterized Framework</span><span class="lang-zh" lang="zh-CN">AI-Agent-Driven Automated Design Optimization of FVF LDOs: A Parameterized Framework</span></h4>
-      <p class="pub-authors">Y. Chen, <strong>J. Wang</strong><sup>†</sup>, J. Yao<sup>†</sup>, J. Gu, Y. Kang, Y. Guo</p>
-      <p class="pub-citation">IEEE International Conference on Solid-State and Integrated Circuit Technology (ICSICT), 2026. · <span class="lang-en" lang="en">To appear</span><span class="lang-zh" lang="zh-CN">待刊</span> <span class="author-role"><span class="lang-en" lang="en">Corresponding author</span><span class="lang-zh" lang="zh-CN">通讯作者</span></span></p>
-    </article><article class="publication" id="analog-design-bench" data-date="2026-09">
-      <h4 class="pub-title"><span class="pub-venue">[arXiv’26]</span> <a href="https://analog-design-bench.tokenzhang.com/" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">Long-Horizon Analog Design Bench: Benchmarking Agents on Hours-Long Analog and Mixed-Signal Circuit Design Tasks</span><span class="lang-zh" lang="zh-CN">Long-Horizon Analog Design Bench: Benchmarking Agents on Hours-Long Analog and Mixed-Signal Circuit Design Tasks</span></a></h4>
-      <p class="pub-authors">Analog Design Bench Team · <strong>Jing Wang</strong></p>
-      <p class="pub-citation">arXiv:2609.33356, 2026.</p><p class="pub-links"><a href="https://arxiv.org/pdf/2609.33356" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a> <a href="https://github.com/Arcadia-1/analog-design-bench" class="resource-link" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-    </article><article class="publication" id="safertl" data-date="2026-09">
-      <h4 class="pub-title"><span class="pub-venue">[AICAS’26]</span> <a href="https://doi.org/10.1109/AICAS69579.2026.11762107" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">SafeRTL: IP-Preserving Verilog Optimization via Principle-Guided Local-Cloud LLM Framework</span><span class="lang-zh" lang="zh-CN">SafeRTL: IP-Preserving Verilog Optimization via Principle-Guided Local-Cloud LLM Framework</span></a></h4>
-      <p class="pub-authors"><strong>J. Wang</strong>, Z. Li, L. Li, F. He, L. Lin, Y. Lai, J. Yao, Y. Li, X. Zeng, Y. Guo</p>
-      <p class="pub-citation">IEEE International Conference on Artificial Intelligence Circuits and Systems (AICAS), 2026. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=11762107" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
-    </article><article class="publication" id="lithogrpo" data-date="2026-07">
-      <h4 class="pub-title"><span class="pub-venue">[ICML’26]</span> <a href="https://proceedings.mlr.press/v306/lai26f.html" class="" target="_blank" rel="noopener noreferrer"><span class="lang-en" lang="en">LithoGRPO: Fast Inverse Lithography via GRPO Reinforced Flow Matching</span><span class="lang-zh" lang="zh-CN">LithoGRPO: Fast Inverse Lithography via GRPO Reinforced Flow Matching</span></a></h4>
-      <p class="pub-authors">Y. Lai, X. Xiong, Z. Xue, G. Chen, <strong>J. Wang</strong>, X. Liu, R. Zhang, R. D. Mullins, B. Yu, P. Luo</p>
-      <p class="pub-citation">International Conference on Machine Learning (ICML), PMLR 306, pp. 62297–62320, 2026.</p><p class="pub-links"><a href="https://raw.githubusercontent.com/mlresearch/v306/main/assets/lai26f/lai26f.pdf" class="resource-link pdf-link" target="_blank" rel="noopener noreferrer">PDF</a> <a href="https://github.com/laiyao1/LithoGRPO" class="resource-link" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-    </article><article class="publication" id="eda-survey" lang="zh-CN" data-date="2026-06">
-      <h4 class="pub-title"><span class="pub-venue">[电子学报’26]</span> <a href="https://www.ejournal.org.cn/cn/article/doi/10.12263/DZXB.20250971" class="" target="_blank" rel="noopener noreferrer">大语言模型在电子设计自动化中的应用综述</a></h4>
-      <p class="pub-authors"><strong>王静</strong>、<wbr>林立宇、<wbr>李磊、<wbr>陈霖谊、<wbr>李征、<wbr>来耀、<wbr>李炎、<wbr>姚佳飞、<wbr>曾晓洋、<wbr>郭宇锋<sup>†</sup></p>
-      <p class="pub-citation">《电子学报》，2026，54(6)：2377–2393。 <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p>
-    </article>
+        <div class="venue-badge v-iccad">ICCAD<small>2026</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1145/3831252.3834253" target="_blank" rel="noopener noreferrer">AnalogRetriever: Learning Cross-Modal Representations for Analog Circuit Retrieval</a></h3>
+          <p class="pub-authors">Y. Wang<sup>*</sup>, L. Li<sup>*</sup>, Y. Lai, <strong>J. Wang</strong><sup>†</sup>, Y. Lu<sup>†</sup></p>
+          <p class="pub-citation">IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2026. <span class="author-role"><span class="lang-en" lang="en">Corresponding author</span><span class="lang-zh" lang="zh-CN">通讯作者</span></span></p><p class="pub-links"><a href="https://yihan-wa.github.io/AnalogRetriever/static/pdfs/AnalogRetriever_paper.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://github.com/yihan-wa/AnalogRetriever_ICCAD" class="resource-link" target="_blank" rel="noopener noreferrer">Code</a><a href="https://huggingface.co/spaces/eulermaxwell/AnalogRetriever" class="resource-link" target="_blank" rel="noopener noreferrer">Demo</a></p>
+        </div>
+      </article><article class="publication" id="icsict-2026" data-date="2026-10">
+        <div class="venue-badge v-icsict">ICSICT<small>2026</small></div>
+        <div>
+          <h3 class="pub-title">AI-Agent-Driven Automated Design Optimization of FVF LDOs: A Parameterized Framework</h3>
+          <p class="pub-authors">Y. Chen, <strong>J. Wang</strong><sup>†</sup>, J. Yao<sup>†</sup>, J. Gu, Y. Kang, Y. Guo</p>
+          <p class="pub-citation">IEEE International Conference on Solid-State and Integrated Circuit Technology (ICSICT), 2026. · <span class="lang-en" lang="en">To appear</span><span class="lang-zh" lang="zh-CN">待刊</span> <span class="author-role"><span class="lang-en" lang="en">Corresponding author</span><span class="lang-zh" lang="zh-CN">通讯作者</span></span></p>
+        </div>
+      </article><article class="publication" id="analog-design-bench" data-date="2026-09">
+        <div class="venue-badge v-arxiv">arXiv<small>2026</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://analog-design-bench.tokenzhang.com/" target="_blank" rel="noopener noreferrer">Long-Horizon Analog Design Bench: Benchmarking Agents on Hours-Long Analog and Mixed-Signal Circuit Design Tasks</a></h3>
+          <p class="pub-authors">Analog Design Bench Team · <strong>Jing Wang</strong></p>
+          <p class="pub-citation">arXiv:2609.33356, 2026.</p><p class="pub-links"><a href="https://arxiv.org/pdf/2609.33356" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://github.com/Arcadia-1/analog-design-bench" class="resource-link" target="_blank" rel="noopener noreferrer">Code</a></p>
+        </div>
+      </article><article class="publication" id="safertl" data-date="2026-09">
+        <div class="venue-badge v-aicas">AICAS<small>2026</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://doi.org/10.1109/AICAS69579.2026.11762107" target="_blank" rel="noopener noreferrer">SafeRTL: IP-Preserving Verilog Optimization via Principle-Guided Local-Cloud LLM Framework</a></h3>
+          <p class="pub-authors"><strong>J. Wang</strong>, Z. Li, L. Li, F. He, L. Lin, Y. Lai, J. Yao, Y. Li, X. Zeng, Y. Guo</p>
+          <p class="pub-citation">IEEE International Conference on Artificial Intelligence Circuits and Systems (AICAS), 2026. <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p><p class="pub-links"><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=11762107" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a></p>
+        </div>
+      </article><article class="publication" id="lithogrpo" data-date="2026-07">
+        <div class="venue-badge v-icml">ICML<small>2026</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://proceedings.mlr.press/v306/lai26f.html" target="_blank" rel="noopener noreferrer">LithoGRPO: Fast Inverse Lithography via GRPO Reinforced Flow Matching</a></h3>
+          <p class="pub-authors">Y. Lai, X. Xiong, Z. Xue, G. Chen, <strong>J. Wang</strong>, X. Liu, R. Zhang, R. D. Mullins, B. Yu, P. Luo</p>
+          <p class="pub-citation">International Conference on Machine Learning (ICML), PMLR 306, pp. 62297–62320, 2026.</p><p class="pub-links"><a href="https://raw.githubusercontent.com/mlresearch/v306/main/assets/lai26f/lai26f.pdf" class="resource-link" target="_blank" rel="noopener noreferrer">PDF</a><a href="https://github.com/laiyao1/LithoGRPO" class="resource-link" target="_blank" rel="noopener noreferrer">Code</a></p>
+        </div>
+      </article><article class="publication" id="eda-survey" lang="zh-CN" data-date="2026-06">
+        <div class="venue-badge v-cje">电子学报<small>2026</small></div>
+        <div>
+          <h3 class="pub-title"><a href="https://www.ejournal.org.cn/cn/article/doi/10.12263/DZXB.20250971" target="_blank" rel="noopener noreferrer">大语言模型在电子设计自动化中的应用综述</a></h3>
+          <p class="pub-authors"><strong>王静</strong>、<wbr>林立宇、<wbr>李磊、<wbr>陈霖谊、<wbr>李征、<wbr>来耀、<wbr>李炎、<wbr>姚佳飞、<wbr>曾晓洋、<wbr>郭宇锋<sup>†</sup></p>
+          <p class="pub-citation">《电子学报》，2026，54(6)：2377–2393。 <span class="author-role"><span class="lang-en" lang="en">First author</span><span class="lang-zh" lang="zh-CN">第一作者</span></span></p>
+        </div>
+      </article>
     </div>
-      </section>
-      <footer class="site-footer"><p>© 2026 Jing Wang · <a href="https://friyawang.github.io/">friyawang.github.io</a></p><p><span class="lang-en" lang="en">Last updated · November 2026</span><span class="lang-zh" lang="zh-CN">最后更新 · 2026 年 11 月</span></p></footer>
-    </main>
-  </div>
-  <script>
-  (() => {
-    const root = document.documentElement;
-    const themeButton = document.getElementById('theme-toggle');
-    const languageButton = document.getElementById('language-toggle');
-    const languageLabel = document.getElementById('language-label');
-    const colorMeta = document.querySelector('meta[name="theme-color"]');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
-    const persist = (key,value) => { try { localStorage.setItem(key,value); } catch (_) {} };
-    function updateThemeButton() {
-      const dark = root.dataset.theme === 'dark';
-      const label = root.dataset.lang === 'zh'
-        ? (dark ? '开灯：切换到日间模式' : '关灯：切换到夜间模式')
-        : (dark ? 'Switch to light mode' : 'Switch to dark mode');
-      themeButton.setAttribute('aria-label',label);
-      themeButton.setAttribute('title',label);
-    }
-    function applyTheme(preference) {
-      root.dataset.themePreference = preference;
-      root.dataset.theme = preference === 'system' ? (systemTheme.matches ? 'dark' : 'light') : preference;
-      colorMeta.content = root.dataset.theme === 'dark' ? '#121720' : '#fafbfd';
-      updateThemeButton();
-    }
-    function applyLanguage(lang) {
-      root.dataset.lang = lang;
-      root.lang = lang === 'zh' ? 'zh-CN' : 'en';
-      languageLabel.textContent = lang === 'zh' ? 'EN' : '中文';
-      languageButton.setAttribute('aria-label', lang === 'zh' ? 'Switch to English' : '切换到中文');
-      updateThemeButton();
-    }
-    themeButton.addEventListener('click', () => {
-      const theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
-      applyTheme(theme);
-      persist('jw-theme',theme);
-    });
-    languageButton.addEventListener('click', () => {
-      const lang = root.dataset.lang === 'en' ? 'zh' : 'en';
-      applyLanguage(lang);
-      persist('jw-language',lang);
-    });
-    const onSystemThemeChange = () => { if (root.dataset.themePreference === 'system') applyTheme('system'); };
-    if (systemTheme.addEventListener) systemTheme.addEventListener('change',onSystemThemeChange);
-    else if (systemTheme.addListener) systemTheme.addListener(onSystemThemeChange);
-    applyTheme(root.dataset.themePreference || 'system');
-    applyLanguage(root.dataset.lang || 'en');
-  })();
-  </script>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-inner">
+    <p><b>Jing Wang · 王静</b><span class="lang-en" lang="en">School of Integrated Circuit Science and Engineering<br>Nanjing University of Posts and Telecommunications</span><span class="lang-zh" lang="zh-CN">南京邮电大学<br>集成电路科学与工程学院</span></p>
+    <p><span class="lang-en" lang="en">Room B518, Dianguang Building, Xianlin Campus</span><span class="lang-zh" lang="zh-CN">仙林校区电光学科楼 B518</span><br><a href="mailto:wangjing25@njupt.edu.cn">wangjing25 [at] njupt [dot] edu [dot] cn</a></p>
+    <p class="footer-links"><a href="https://scholar.google.com/citations?hl=en&amp;user=YH18iEsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a><a href="https://orcid.org/0000-0003-3136-4299" target="_blank" rel="me noopener noreferrer">ORCID</a><span><span class="lang-en" lang="en">Updated Nov 2026</span><span class="lang-zh" lang="zh-CN">更新于 2026 年 11 月</span></span></p>
+  </div></footer>
+  <script src="/assets/js/site.js"></script>
 </body>
 </html>
